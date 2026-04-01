@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care & Care | Premium NDIS Services</title>
+    
+    <title>Care & Care | Premium NDIS & ECEI Services Australia</title>
+    <meta name="description" content="Care & Care is a registered NDIS provider in Australia specializing in Early Childhood Early Intervention (ECEI), Support Coordination, and Plan Management.">
+    <meta name="keywords" content="NDIS, ECEI, Early Childhood Intervention, Support Coordination, Plan Management, Disability Support Australia, Care and Care">
+    <meta name="author" content="Care and Care">
+    <meta name="robots" content="index, follow">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
 
     <style>
+        /* --- VARIABLES & BASE --- */
         :root {
             --brand-blue: #599fc4; 
             --black: #000000; 
@@ -19,40 +25,24 @@
             --text-muted: #888888;
             --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--white); 
-            color: var(--black); 
-            overflow-x: hidden; 
-            line-height: 1.6; 
-            /* Makes fonts look sharper and premium like Apple devices */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); 
+            overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
         }
 
-        /* --- SMOOTH FLOATING ANIMATIONS --- */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* --- FADE ANIMATIONS --- */
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* HEADER */
+        /* --- HEADER & NAV --- */
         header { 
             position: fixed; top: 0; width: 100%; z-index: 1000; 
             background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .brand-logo { height: 45px; width: auto; }
-
         nav { display: flex; gap: 40px; align-items: center; }
         .nav-item { position: relative; padding: 20px 0; }
         .nav-link { text-decoration: none; color: var(--black); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); display: flex; align-items: center; gap: 5px; cursor: pointer; }
@@ -68,7 +58,7 @@
         .dropdown-menu a { padding: 15px 20px; color: var(--white); text-decoration: none; font-weight: 500; font-size: 14px; border-radius: 8px; transition: var(--transition); }
         .dropdown-menu a:hover { background: #222; color: var(--brand-blue); padding-left: 25px; }
 
-        /* HERO */
+        /* --- HERO --- */
         .hero { 
             height: 100vh; min-height: 700px; display: flex; align-items: center; padding: 0 5%; margin-top: 70px;
             background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1920&q=80') center/cover;
@@ -80,7 +70,7 @@
         .premium-btn { display: inline-block; background: var(--white); color: var(--black); font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; padding: 20px 50px; border-radius: 50px; text-decoration: none; transition: var(--transition); }
         .premium-btn:hover { background: var(--brand-blue); color: var(--white); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(89, 159, 196, 0.4); }
 
-        /* FIXED RUNNING TESTIMONIALS */
+        /* --- TESTIMONIALS TICKER --- */
         .ticker-container { background: var(--white); padding: 25px 0; overflow: hidden; width: 100%; border-bottom: 1px solid #eee; position: relative; }
         .ticker-track { display: inline-flex; width: max-content; animation: scrollTicker 30s linear infinite; }
         .ticker-track:hover { animation-play-state: paused; }
@@ -89,7 +79,7 @@
         .ticker-item img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
         .ticker-item strong { color: var(--black); }
 
-        /* SECTIONS & GRID */
+        /* --- SECTIONS --- */
         section { padding: 120px 5%; scroll-margin-top: 80px; } 
         .section-dark { background: var(--black); color: var(--white); }
         .section-light { background: var(--light-gray); }
@@ -104,14 +94,14 @@
         .card-body { padding: 40px; }
         .card-body h3 { font-size: 26px; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
 
-        /* FOOTER */
+        /* --- FOOTER --- */
         footer { background: var(--dark-gray); color: var(--white); padding: 100px 5% 40px 5%; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 60px; margin-bottom: 40px; }
         .footer-col h3 { font-size: 14px; font-weight: 800; margin-bottom: 25px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; }
         .footer-col a, .footer-col p { color: var(--white); text-decoration: none; font-size: 16px; margin-bottom: 15px; display: block; opacity: 0.8; transition: var(--transition); }
         .footer-col a:hover { opacity: 1; color: var(--brand-blue); padding-left: 5px; }
 
-        /* CHATBOT & WA WIDGETS */
+        /* --- WIDGETS --- */
         .widget-btn { position: fixed; bottom: 30px; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: var(--transition); z-index: 9999; border: none; outline: none; }
         .wa-btn { right: 30px; background: #25d366; }
         .chat-toggle { left: 30px; background: var(--black); color: var(--white); }
@@ -137,8 +127,9 @@
 
     <header>
         <a href="#home">
-            <img src="logo.png" alt="Care & Care" class="brand-logo" onerror="this.outerHTML='<h2 style=\'color:#000; font-weight:900; letter-spacing:-2px;\'>CARE&CARE.</h2>'">
+            <img src="logo.png" alt="Care & Care NDIS Provider" class="brand-logo" onerror="this.outerHTML='<h2 style=\'color:#000; font-weight:900; letter-spacing:-2px;\'>CARE&CARE.</h2>'">
         </a>
+        
         <nav>
             <div class="nav-item"><a href="#home" class="nav-link" style="color: var(--brand-blue);">Home</a></div>
             <div class="nav-item">
@@ -153,232 +144,4 @@
                 <div class="nav-link">Plan Management <span class="nav-arrow">▼</span></div>
                 <div class="dropdown-menu"><a href="#plan-management">How it works</a><a href="#pricing">Pricing Structure</a></div>
             </div>
-            <div class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></div>
-            <div class="nav-item"><a href="#contact" class="nav-link">Contact</a></div>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content fade-up">
-            <h1>Nurturing Potential.<br>Empowering Lives.</h1>
-            <p>Your trusted NDIS partner specializing in Early Childhood Early Intervention and premium personalized care.</p>
-            <a href="#contact" class="premium-btn">Book Consultation</a>
-        </div>
-    </section>
-
-    <div id="testimonials" class="ticker-container">
-        <div class="ticker-track">
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah"><div><strong>ECEI support was incredible! ❤️</strong> — Parent, Sarah L.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David"><div><strong>Amazing Plan Management. ❤️</strong> — Participant, David T.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma"><div><strong>A truly life-changing partnership. ❤️</strong> — Parent, Emma R.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Jessica"><div><strong>The best Support Coordinators! ❤️</strong> — Participant, Jessica M.</div></div>
-            
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah"><div><strong>ECEI support was incredible! ❤️</strong> — Parent, Sarah L.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David"><div><strong>Amazing Plan Management. ❤️</strong> — Participant, David T.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma"><div><strong>A truly life-changing partnership. ❤️</strong> — Parent, Emma R.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Jessica"><div><strong>The best Support Coordinators! ❤️</strong> — Participant, Jessica M.</div></div>
-        </div>
-    </div>
-
-    <section id="our-story" class="section">
-        <div class="section-title fade-up">Our Story.</div>
-        <div class="section-subtitle fade-up">A journey of compassion and dedication towards building a better tomorrow for children and participants.</div>
-        <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;" class="fade-up">
-            <div style="flex: 1; min-width: 300px;">
-                <p style="color: var(--text-muted); font-size: 18px; line-height: 1.8;">Care and Care started with a simple vision: to simplify the NDIS journey for families. We understood that navigating developmental delays and disability support can be overwhelming. Today, we stand as a premium provider, committed to delivering high-end, personalized care that genuinely transforms lives.</p>
-            </div>
-            <div style="flex: 1; min-width: 300px;">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" alt="Our Story">
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-dark">
-        <div class="section-title fade-up" style="color: var(--white);">Our Services.</div>
-        <div class="section-subtitle fade-up" style="color: var(--text-muted);">High-end support designed to empower you.</div>
-        <div class="grid">
-            <div class="card fade-up" id="ecei">
-                <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="ECEI">
-                <div class="card-body">
-                    <h3>Early Childhood (ECEI)</h3>
-                    <p>We work closely with children aged 0-6 years who have developmental delays, building confidence through proven play-based strategies.</p>
-                </div>
-            </div>
-            <div class="card fade-up" id="support-coordination" style="transition-delay: 0.1s;">
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Support">
-                <div class="card-body">
-                    <h3>Support Coordination</h3>
-                    <p>Navigating the NDIS can be overwhelming. We help you understand your plan, connect with the right providers, and maximize funded supports.</p>
-                </div>
-            </div>
-            <div class="card fade-up" id="daily-activities" style="transition-delay: 0.2s;">
-                <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5fe5?auto=format&fit=crop&w=600&q=80" alt="Daily Tasks">
-                <div class="card-body">
-                    <h3>Daily Activities</h3>
-                    <p>Compassionate support to help you live independently. Our trained staff assist with everyday tasks in the comfort of your own home.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="plan-management" class="section fade-up">
-        <div class="section-title">Plan Management.</div>
-        <div class="section-subtitle">Total financial control, without the administrative headache.</div>
-        <div style="background: var(--black); color: var(--white); padding: 60px; border-radius: 20px;">
-            <h3 style="font-size: 30px; margin-bottom: 20px;">How It Works</h3>
-            <p style="font-size: 18px; opacity: 0.8; margin-bottom: 40px; max-width: 800px;">We act as your personal NDIS accountants. You choose the providers you want (registered or unregistered), and we handle the invoices, record-keeping, and portal claims.</p>
-            
-            <div id="pricing">
-                <h3 style="font-size: 30px; margin-bottom: 20px;">Pricing Structure</h3>
-                <p style="font-size: 18px; opacity: 0.8; margin-bottom: 20px;">Our fees are strictly in line with the latest NDIS Pricing Arrangements. There are no out-of-pocket expenses for you.</p>
-                <ul style="font-size: 16px; opacity: 0.8; line-height: 2; margin-left: 20px;">
-                    <li>Set up costs covered by NDIS</li>
-                    <li>Monthly processing fees covered by NDIS</li>
-                    <li>Complete transparency through our dedicated portal</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section section-light fade-up">
-        <div class="section-title">Contact Us.</div>
-        <div class="section-subtitle">Ready to start your journey? We are here to listen.</div>
-        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px; background: var(--white); padding: 50px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                <input type="text" placeholder="Full Name" style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Inter';">
-                <input type="email" placeholder="Email Address" style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Inter';">
-                <textarea rows="5" placeholder="How can we help?" style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Inter';"></textarea>
-                <button style="width: 100%; padding: 18px; background: var(--black); color: var(--white); border: none; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s;" onmouseover="this.style.background='var(--brand-blue)'" onmouseout="this.style.background='var(--black)'">Submit Request</button>
-            </div>
-            <div style="flex: 1; min-width: 300px; padding: 20px;">
-                <h3 style="font-size: 24px; margin-bottom: 20px;">Our Office</h3>
-                <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 40px;">Greenwood Business Park,<br>301 Burwood Hwy, Building 1,<br>Burwood VIC 3125</p>
-                <h3 style="font-size: 24px; margin-bottom: 20px;">Direct Line</h3>
-                <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 40px;">0491 649 145</p>
-                <h3 style="font-size: 24px; margin-bottom: 20px;">Email</h3>
-                <p style="font-size: 18px; color: var(--text-muted);">Info@careandcare.com.au</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid fade-up">
-            <div class="footer-col" style="max-width: 300px;">
-                <h2 style="font-size:30px; margin-bottom:20px; font-weight:900; letter-spacing:-2px;">CARE&CARE.</h2>
-                <p style="font-size: 14px; opacity: 0.6; line-height: 1.6;">Let us guide you through the NDIS journey to achieve your goals together.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Explore</h3>
-                <a href="#about">About Us</a>
-                <a href="#services">NDIS Services</a>
-                <a href="#plan-management">Plan Management</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h3>Legal</h3>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">NDIS Compliance</a>
-            </div>
-        </div>
-        <p style="text-align: center; opacity: 0.4; font-size: 14px;">© 2026 Care & Care Australia. Designed for excellence.</p>
-    </footer>
-
-    <a href="https://wa.me/61491649145" class="widget-btn wa-btn" target="_blank">
-        <svg viewBox="0 0 24 24" fill="white" width="35" height="35"><path d="M20.52 3.44A11.96 11.96 0 0 0 12 0a12 12 0 0 0-10.27 18.2L0 24l5.97-1.56A11.95 11.95 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.22-3.48-8.56zM12 22a9.96 9.96 0 0 1-5.1-1.4l-.36-.22-3.8.99 1.01-3.7-.23-.37A9.95 9.95 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10z"/></svg>
-    </a>
-
-    <button class="widget-btn chat-toggle" onclick="toggleChat()">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-    </button>
-
-    <div class="chat-window" id="chatWindow">
-        <div class="chat-head">
-            Care & Care Assistant
-            <span class="chat-close" onclick="toggleChat()">×</span>
-        </div>
-        <div class="chat-body" id="chatBody">
-            <div class="msg msg-bot">Hello! 👋 Welcome to Care & Care. You can ask me about our services, timings, location, pricing, or NDIS!</div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMsg()">
-            <button onclick="sendMsg()">➤</button>
-        </div>
-    </div>
-
-    <script>
-        // 1. SCROLL FADE-UP ANIMATION OBSERVER
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-up').forEach((el) => {
-                observer.observe(el);
-            });
-        });
-
-        // 2. CHATBOT OPEN SOUND & TOGGLE
-        // High quality pop sound from public assets
-        const popSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
-        popSound.volume = 0.5; // Set volume to 50% so it's pleasant
-
-        function toggleChat() {
-            const chatWin = document.getElementById('chatWindow');
-            chatWin.classList.toggle('open');
-            
-            // Play sound if window is opening
-            if(chatWin.classList.contains('open')) {
-                popSound.currentTime = 0; // Reset audio to start
-                popSound.play().catch(e => console.log("Sound autoplay blocked by browser"));
-            }
-        }
-
-        // 3. CHATBOT LOGIC
-        const botDB = {
-            "hi": "Hello! Welcome to Care & Care. How can I assist you today?",
-            "hello": "Hi there! I'm your Care & Care assistant. What would you like to know?",
-            "hey": "Hello! How can we help you and your family?",
-            "services": "We offer Early Childhood Early Intervention (ECEI), Support Coordination, and Plan Management.",
-            "ecei": "ECEI stands for Early Childhood Early Intervention. It's designed for children aged 0-6 years.",
-            "support coordination": "Our Support Coordinators help you understand your NDIS plan and connect with local therapists.",
-            "plan management": "Plan Management means we act as your NDIS accountants. We pay your provider invoices.",
-            "cost": "Our fees strictly follow the NDIS Pricing Arrangements. There are no out-of-pocket expenses.",
-            "location": "We are located at Greenwood Business Park, 301 Burwood Hwy, Burwood VIC 3125.",
-            "contact": "You can call us directly at 0491 649 145 or email Info@careandcare.com.au.",
-            "hours": "We are open Monday to Friday, from 9 AM to 5 PM AEST.",
-            "refer": "To make a referral, please visit the Contact section and fill out the form.",
-            "default": "At Care & Care, we are a premium NDIS provider specializing in ECEI, Support Coordination, and Plan Management. If you have a specific query, you can also reach our experts at 0491 649 145!"
-        };
-
-        function sendMsg() {
-            let input = document.getElementById("chatInput");
-            let text = input.value.trim();
-            if(!text) return;
-            
-            let chatBody = document.getElementById("chatBody");
-            chatBody.innerHTML += `<div class="msg msg-user">${text}</div>`;
-            input.value = "";
-            chatBody.scrollTop = chatBody.scrollHeight;
-            
-            setTimeout(() => {
-                let reply = botDB["default"];
-                let textLower = text.toLowerCase();
-                for(let key in botDB) {
-                    if(textLower.includes(key) && key !== "default") { reply = botDB[key]; break; }
-                }
-                chatBody.innerHTML += `<div class="msg msg-bot">${reply}</div>`;
-                chatBody.scrollTop = chatBody.scrollHeight;
-                
-                // Optional: Play sound when bot replies
-                popSound.currentTime = 0;
-                popSound.play().catch(e => {});
-            }, 700);
-        }
-    </script>
-</body>
-</html>
+            <div class="nav-item
