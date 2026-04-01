@@ -3,356 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care and Care | Premium ECEI & NDIS Provider</title>
+    <title>Care and Care | ECEI & NDIS Provider</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
-        /* === CSS VARIABLES & RESET === */
         :root {
-            --primary: #205c54; /* Teal */
+            --primary: #006666; /* Teal */
             --gold: #d4af37;
             --gold-gradient: linear-gradient(to bottom, #fde48f, #cf9e38);
             --bg-light: #f9fbfd;
             --text-dark: #333;
-            --text-light: #666;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; transition: all 0.3s ease; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
 
-        /* === ACCESSIBILITY (HIGH CONTRAST MODE) === */
-        body.high-contrast { background-color: #000 !important; color: #fff !important; }
-        body.high-contrast header, body.high-contrast .card, body.high-contrast footer, body.high-contrast section, body.high-contrast form { background-color: #111 !important; color: #fff !important; border-color: #fff !important; }
-        body.high-contrast h1, body.high-contrast h2, body.high-contrast h3, body.high-contrast p { color: #fff !important; }
-        
-        .access-bar { background: var(--primary); color: #fff; padding: 8px 50px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; font-size: 13px; z-index: 1001; position: relative; }
-        .access-bar button { background: rgba(255,255,255,0.2); border: none; color: #fff; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .access-bar button:hover { background: var(--gold); color: #000; }
-
-        /* === HEADER === */
+        /* HEADER & MENU */
         header { background: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .brand-container { display: flex; align-items: center; gap: 15px; }
         .logo { font-family: 'Great Vibes', cursive; font-size: 38px; color: var(--primary); text-decoration: none; font-weight: bold; }
-        .ndis-badge { background: #f0f8ff; color: #0056b3; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid #cce5ff; }
-        
-        nav { display: flex; gap: 25px; align-items: center; }
-        nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 15px; transition: 0.3s; }
-        nav a:hover { color: var(--gold); }
+        nav { display: flex; gap: 30px; align-items: center; }
+        .nav-item { position: relative; padding: 10px 0; cursor: pointer; display: flex; align-items: center; }
+        .nav-link { text-decoration: none; color: #333; font-weight: 500; font-size: 16px; transition: 0.3s; }
+        .nav-link.active { color: var(--primary); }
+        .nav-item:hover .nav-link { color: var(--primary); }
+        .drop-arrow { font-size: 10px; color: #666; margin-left: 6px; }
 
-        /* === HERO SECTION (IMAGE MATCH) === */
-        .hero {
-            height: 90vh;
-            min-height: 650px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            /* YAHAN APNI IMAGE DAALEIN: url('aapki-image-ka-naam.jpg') */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1587691592099-24045742c181?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            color: white;
-            padding: 0 20px;
-        }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); min-width: 220px; border-radius: 8px; flex-direction: column; overflow: hidden; border: 1px solid #eee; padding: 10px 0; }
+        .nav-item:hover .dropdown-menu { display: flex; }
+        .dropdown-menu a { padding: 12px 20px; color: #555; text-decoration: none; border-bottom: 1px solid #f5f5f5; font-size: 14px; transition: 0.3s; }
+        .dropdown-menu a:hover { background: #f9fbfd; color: var(--primary); padding-left: 25px; }
+
+        /* HERO SECTION */
+        .hero { height: 90vh; min-height: 650px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; color: white; padding: 0 20px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 60px; font-weight: 600; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
         .hero p { font-size: 20px; font-weight: 400; max-width: 750px; margin-bottom: 40px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); line-height: 1.5; }
-        
-        .gold-btn { background: var(--gold-gradient); color: #000; font-weight: 700; font-size: 16px; padding: 15px 35px; border-radius: 50px; text-decoration: none; border: 2px solid rgba(255, 255, 255, 0.8); box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s; cursor: pointer; z-index: 10; display: inline-block; }
+        .gold-btn { background: var(--gold-gradient); color: #000; font-weight: 700; font-size: 16px; padding: 15px 35px; border-radius: 50px; text-decoration: none; border: 2px solid rgba(255, 255, 255, 0.8); box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; }
         .gold-btn:hover { transform: scale(1.05); }
 
-        /* === RUNNING TESTIMONIALS === */
+        /* TESTIMONIALS TICKER */
         .ticker-wrapper { position: absolute; bottom: 40px; width: 100%; overflow: hidden; display: flex; align-items: center; }
-        .ticker-track { display: flex; gap: 20px; align-items: center; animation: scrollTicker 30s linear infinite; }
-        .ticker-track:hover { animation-play-state: paused; }
+        .ticker-track { display: flex; gap: 20px; animation: scrollTicker 30s linear infinite; }
         @keyframes scrollTicker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        
-        .ticker-item { display: flex; align-items: center; background: rgba(255, 255, 255, 0.95); padding: 5px 20px 5px 5px; border-radius: 50px; border: 2px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.2); white-space: nowrap; min-width: 320px; color: #333; }
-        .ticker-item img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #fff; }
-        .ticker-text { display: flex; flex-direction: column; font-size: 13px; }
-        .ticker-text strong { font-weight: 600; }
-        .ticker-text span { color: var(--text-light); font-size: 11px; }
-        .ticker-arrow { color: white; font-size: 20px; font-weight: 300; }
+        .ticker-item { display: flex; align-items: center; background: rgba(255, 255, 255, 0.95); padding: 5px 20px 5px 5px; border-radius: 50px; border: 2px solid var(--gold); white-space: nowrap; min-width: 320px; color: #333; }
+        .ticker-item img { width: 45px; height: 45px; border-radius: 50%; margin-right: 15px; }
 
-        /* === GENERAL SECTIONS === */
-        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-family: 'Playfair Display', serif; color: var(--primary); font-size: 36px; margin-bottom: 50px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid var(--primary); }
-        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; }
-
-        /* === NDIS EXPLAINED (Simplified) === */
-        .step-box { background: #eef7f6; padding: 25px; border-radius: 10px; text-align: left; }
-        .step-num { display: inline-block; background: var(--gold); color: #fff; width: 35px; height: 35px; text-align: center; line-height: 35px; border-radius: 50%; font-weight: bold; margin-bottom: 15px; }
-
-        /* === MULTILINGUAL BANNER === */
-        .multilingual-banner { background: var(--primary); color: white; padding: 40px 20px; text-align: center; border-radius: 15px; margin: 40px 0; }
-        .multilingual-banner h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
-        .multilingual-banner p { font-size: 16px; opacity: 0.9; }
-
-        /* === FAQ SECTION === */
-        details { background: #fff; padding: 15px 20px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #eee; cursor: pointer; }
-        summary { font-weight: 600; font-size: 16px; color: var(--primary); outline: none; }
-        details p { margin-top: 15px; color: var(--text-light); font-size: 15px; line-height: 1.6; }
-
-        /* === REFERRAL FORM === */
-        .form-container { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); max-width: 700px; margin: 0 auto; border-top: 5px solid var(--gold); }
-        .form-group { margin-bottom: 20px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; }
-        
-        /* === WIDGETS === */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none; transition: 0.3s; }
-        .wa-float:hover { transform: scale(1.1); }
-        .wa-float svg { width: 35px; height: 35px; fill: currentColor; }
-
-        /* Left Chatbot (Exact Match) */
-        .chat-toggle { position: fixed; bottom: 30px; left: 30px; background: var(--primary); color: #fde48f; border: 2px solid #fde48f; border-radius: 50%; width: 65px; height: 65px; font-size: 30px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
-        .chat-toggle:hover { transform: scale(1.1); }
-        .chat-window { position: fixed; bottom: 110px; left: 30px; width: 340px; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; z-index: 9999; overflow: hidden; border: 1px solid #eee; } /* Open by default to match image */
-        .chat-header { background: #fff; color: #000; padding: 15px; font-size: 14px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-        .chat-header span { cursor: pointer; font-size: 20px; color: #999; line-height: 1; }
-        .chat-body { padding: 15px; background: transparent; min-height: 120px; max-height: 300px; overflow-y: auto; }
-        .chat-bubble { background: white; border: 1px solid #eee; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 10px; }
-        .chat-input-area { display: flex; padding: 12px; border-top: 1px solid #eee; background: #fff; }
-        .chat-input-area input { flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-size: 13px; }
-        .chat-input-area button { background: transparent; border: none; color: var(--text-light); font-size: 18px; margin-left: 10px; cursor: pointer; }
+        /* FOOTER */
+        footer { background: #1a1a1a; color: white; padding: 60px 20px 20px 20px; margin-top: 50px; }
+        .footer-grid { display: flex; flex-wrap: wrap; gap: 40px; max-width: 1200px; margin: auto; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 20px; }
+        .footer-col { flex: 1; min-width: 220px; }
+        .footer-col h3 { color: var(--gold); margin-bottom: 20px; font-size: 20px; }
+        .footer-col p, .footer-col a { color: #aaa; text-decoration: none; font-size: 14px; margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
 
-    <div class="access-bar">
-        <span>Accessibility Tools:</span>
-        <button onclick="changeFontSize(-1)">A-</button>
-        <button onclick="changeFontSize(1)">A+</button>
-        <button onclick="toggleContrast()">High Contrast Mode</button>
-    </div>
-
     <header>
-        <div class="brand-container">
-            <a href="#" class="logo">Careandcare</a>
-            <span class="ndis-badge">✅ Registered NDIS Provider</span>
-        </div>
+        <a href="index.html" class="logo">Careandcare</a>
         <nav>
-            <a href="#" style="color: var(--primary);">Home</a>
-            <a href="#about">About Us ▾</a>
-            <a href="#services">NDIS Services ▾</a>
-            <a href="#plan">Plan Management ▾</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
+            <div class="nav-item"><a href="index.html" class="nav-link active">Home</a></div>
+            <div class="nav-item">
+                <span class="nav-link">About Us <span class="drop-arrow">▼</span></span>
+                <div class="dropdown-menu"><a href="#">Our Story</a><a href="#">Our Team</a></div>
+            </div>
+            <div class="nav-item">
+                <span class="nav-link">NDIS Services <span class="drop-arrow">▼</span></span>
+                <div class="dropdown-menu"><a href="services.html#ecei">Early Childhood (ECEI)</a><a href="services.html#support">Support Coordination</a><a href="services.html#daily">Daily Personal Activities</a></div>
+            </div>
+            <div class="nav-item">
+                <span class="nav-link">Plan Management <span class="drop-arrow">▼</span></span>
+                <div class="dropdown-menu"><a href="#">How it works</a><a href="#">Pricing</a></div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-link">Testimonials</a></div>
+            <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
         </nav>
     </header>
 
     <section class="hero">
         <h1>Nurturing Potential, Empowering Lives</h1>
         <p>Your trusted NDIS partner specializing in Early Childhood Early Intervention (ECEI) and personalized care across Australia.</p>
-        <a href="#referral" class="gold-btn">Book a Free Consultation</a>
+        <a href="contact.html" class="gold-btn">Book a Free Consultation</a>
 
         <div class="ticker-wrapper">
             <div class="ticker-track">
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div class="ticker-text"><strong>ECEI support was incredible! ❤️</strong><span>Parent - Sarah L.</span></div></div>
-                <span class="ticker-arrow">→</span>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="pic"><div class="ticker-text"><strong>A truly life-changing partnership. ❤️</strong><span>Parent - Emma R.</span></div></div>
-                <span class="ticker-arrow">→</span>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div class="ticker-text"><strong>Amazing Plan Management. ❤️</strong><span>Participant - David T.</span></div></div>
-                <span class="ticker-arrow">→</span>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div class="ticker-text"><strong>ECEI support was incredible! ❤️</strong><span>Parent - Sarah L.</span></div></div>
-                <span class="ticker-arrow">→</span>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="pic"><div class="ticker-text"><strong>A truly life-changing partnership. ❤️</strong><span>Parent - Emma R.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div style="font-size: 13px;"><strong>ECEI support was incredible! ❤️</strong><br><span style="color:#666; font-size:11px;">Parent - Sarah L.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div style="font-size: 13px;"><strong>Amazing Plan Management. ❤️</strong><br><span style="color:#666; font-size:11px;">Participant - David T.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div style="font-size: 13px;"><strong>ECEI support was incredible! ❤️</strong><br><span style="color:#666; font-size:11px;">Parent - Sarah L.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div style="font-size: 13px;"><strong>Amazing Plan Management. ❤️</strong><br><span style="color:#666; font-size:11px;">Participant - David T.</span></div></div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="about">
-        <h2 class="section-title">How The NDIS Works With Us</h2>
-        <div class="grid-3">
-            <div class="step-box">
-                <div class="step-num">1</div>
-                <h3 style="color: var(--primary); margin-bottom: 10px;">Understand Your Plan</h3>
-                <p style="color: var(--text-light); font-size: 15px;">We translate complex NDIS jargon into simple terms, helping you understand exactly what funding and support you are eligible for.</p>
-            </div>
-            <div class="step-box">
-                <div class="step-num">2</div>
-                <h3 style="color: var(--primary); margin-bottom: 10px;">Connect With Services</h3>
-                <p style="color: var(--text-light); font-size: 15px;">Our Support Coordinators link you directly with top-tier therapists, child care experts, and community services.</p>
-            </div>
-            <div class="step-box">
-                <div class="step-num">3</div>
-                <h3 style="color: var(--primary); margin-bottom: 10px;">Achieve Your Goals</h3>
-                <p style="color: var(--text-light); font-size: 15px;">We continuously manage your plan and track progress to ensure you and your child are hitting crucial milestones.</p>
-            </div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col"><h2 style="font-family:'Great Vibes', cursive; font-size:32px;">Careandcare</h2><p>For updated news & events, subscribe to our newsletter today!</p></div>
+            <div class="footer-col"><h3>Quick Links</h3><a href="index.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
+            <div class="footer-col"><h3>Contact Us</h3><p>Greenwood Business Park,<br>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p><p>Tel: 0491 649 145</p></div>
         </div>
-    </section>
+        <p style="text-align: center; color: #666; font-size: 13px;">© 2026 by Care & Care. Designed by PAGEFOURDESIGN</p>
+    </footer>
 
-    <section class="section" style="background: #fff;">
-        <h2 class="section-title">Meet Our Expert Team</h2>
-        <div class="grid-3">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Support Coordinator">
-                <h3 style="color: var(--primary);">Dr. Olivia Carter</h3>
-                <p style="color: var(--gold); font-weight: bold; margin-bottom: 10px;">Lead ECEI Specialist</p>
-                <p style="color: var(--text-light); font-size: 14px;">Over 10 years of experience in early childhood intervention and pediatric psychology.</p>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=600&q=80" alt="Plan Manager">
-                <h3 style="color: var(--primary);">James Anderson</h3>
-                <p style="color: var(--gold); font-weight: bold; margin-bottom: 10px;">Senior Plan Manager</p>
-                <p style="color: var(--text-light); font-size: 14px;">Ensuring your NDIS budget is utilized effectively with complete financial transparency.</p>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Therapist">
-                <h3 style="color: var(--primary);">Maya Patel</h3>
-                <p style="color: var(--gold); font-weight: bold; margin-bottom: 10px;">Support Coordinator</p>
-                <p style="color: var(--text-light); font-size: 14px;">Dedicated to connecting families with the perfect community and health resources.</p>
-            </div>
-        </div>
-
-        <div class="multilingual-banner">
-            <h3>🌍 We Speak Your Language</h3>
-            <p>Our diverse team provides support in English, Hindi, Punjabi, Mandarin, and Arabic to ensure clear communication for every family.</p>
-        </div>
-    </section>
-
-    <section class="section" id="referral">
-        <h2 class="section-title">Make a Referral</h2>
-        <div class="form-container">
-            <p style="text-align: center; margin-bottom: 30px; color: var(--text-light);">Hospitals, Support Coordinators, and Families can submit details directly.</p>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label>Referrer / Your Full Name *</label>
-                    <input type="text" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label>Email Address *</label>
-                    <input type="email" placeholder="john@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Required NDIS Service *</label>
-                    <select required>
-                        <option value="">Select a service...</option>
-                        <option value="ecei">Early Childhood Early Intervention (ECEI)</option>
-                        <option value="support">Support Coordination</option>
-                        <option value="plan">Plan Management</option>
-                        <option value="other">Other Inquiry</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Message / Participant Details</label>
-                    <textarea rows="4" placeholder="Briefly describe the support needed..."></textarea>
-                </div>
-                <button type="submit" class="gold-btn" style="width: 100%; border: none;">Submit Referral Securely</button>
-            </form>
-        </div>
-    </section>
-
-    <section class="section" style="background: #fff;">
-        <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
-            <div>
-                <h2 class="section-title" style="text-align: left; font-size: 28px;">Frequently Asked Questions</h2>
-                <details>
-                    <summary>What are NDIS Line Items & Pricing?</summary>
-                    <p>We adhere strictly to the latest NDIS Pricing Arrangements and Price Limits. All charges are transparent and discussed upfront before signing service agreements.</p>
-                </details>
-                <details>
-                    <summary>Is my child eligible for ECEI?</summary>
-                    <p>Children aged 0-6 with a developmental delay or disability are generally eligible. You do not need a formal diagnosis to access initial early childhood support.</p>
-                </details>
-                <details>
-                    <summary>What is the benefit of Plan Management?</summary>
-                    <p>Plan Management gives you the flexibility to use both registered and unregistered NDIS providers without the headache of handling invoices and payments yourself.</p>
-                </details>
-            </div>
-            
-            <div>
-                <h2 class="section-title" style="text-align: left; font-size: 28px;">Resource Hub & Articles</h2>
-                <div style="background: var(--bg-light); padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--primary);">
-                    <h4 style="color: var(--primary); margin-bottom: 5px;">Understanding Your Child's Milestones</h4>
-                    <p style="font-size: 13px; color: var(--text-light);">Learn the early signs of developmental delays and how ECEI can provide a crucial head start. <a href="#" style="color: var(--gold); font-weight: bold; text-decoration: none;">Read More →</a></p>
-                </div>
-                <div style="background: var(--bg-light); padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);">
-                    <h4 style="color: var(--primary); margin-bottom: 5px;">Support Coordination vs Plan Management</h4>
-                    <p style="font-size: 13px; color: var(--text-light);">Confused by NDIS roles? Here is a simple breakdown of who does what in your NDIS journey. <a href="#" style="color: var(--gold); font-weight: bold; text-decoration: none;">Read More →</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/61491649145" class="wa-float" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M20.52 3.44A11.96 11.96 0 0 0 12 0a12 12 0 0 0-10.27 18.2L0 24l5.97-1.56A11.95 11.95 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.22-3.48-8.56zM12 22a9.96 9.96 0 0 1-5.1-1.4l-.36-.22-3.8.99 1.01-3.7-.23-.37A9.95 9.95 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10zm5.46-7.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.88-.8-1.47-1.78-1.64-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.48 1.7.62.71.22 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35z"/></svg>
-    </a>
-
-    <button class="chat-toggle" onclick="toggleChat()">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-    </button>
-
-    <div class="chat-window" id="chatWindow">
-        <div class="chat-header">
-            Care & Care Support
-            <span onclick="toggleChat()">×</span>
-        </div>
-        <div class="chat-body" id="chatBody">
-            <div class="chat-bubble">
-                Hi there! 👋 I'm your Care & Care virtual assistant. You can ask me about NDIS, ECEI, our services, or how to refer a participant.
-            </div>
-        </div>
-        <div class="chat-input-area">
-            <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter') sendChat()">
-            <button onclick="sendChat()">➤</button>
-        </div>
-    </div>
-
-    <script>
-        // 1. Accessibility Logic
-        let zoomLevel = 100;
-        function changeFontSize(step) {
-            zoomLevel += (step * 5);
-            if(zoomLevel >= 90 && zoomLevel <= 130) {
-                document.body.style.zoom = zoomLevel + "%";
-            }
-        }
-        function toggleContrast() {
-            document.body.classList.toggle("high-contrast");
-        }
-
-        // 2. Chat Widget Logic
-        function toggleChat() {
-            const chat = document.getElementById("chatWindow");
-            chat.style.display = chat.style.display === "none" ? "flex" : "none";
-        }
-
-        const botDB = {
-            "ndis": "We simplify the NDIS process! We offer Support Coordination, Plan Management and ECEI services.",
-            "ecei": "Our ECEI program helps children aged 0-6 years achieve milestones. You can book a free consultation above.",
-            "refer": "Please use the 'Make a Referral' form on this page to securely submit details.",
-            "price": "We follow the strict NDIS Pricing Arrangements to ensure full transparency.",
-            "hello": "Hello! How can our team support you today?",
-            "default": "Thanks for your message! Please leave your contact number or use the WhatsApp button, and our team will get back to you shortly."
-        };
-
-        function sendChat() {
-            const input = document.getElementById("chatInput");
-            const text = input.value.trim();
-            if(!text) return;
-            
-            const chatBody = document.getElementById("chatBody");
-            
-            // User Msg
-            chatBody.innerHTML += `<div style="text-align: right;"><div class="chat-bubble" style="background: var(--primary); color: white; display: inline-block; max-width: 85%; text-align: left;">${text}</div></div>`;
-            input.value = "";
-            chatBody.scrollTop = chatBody.scrollHeight;
-            
-            // Bot Reply
-            setTimeout(() => {
-                let reply = botDB["default"];
-                let textLower = text.toLowerCase();
-                for(let key in botDB) {
-                    if(textLower.includes(key)) { reply = botDB[key]; break; }
-                }
-                chatBody.innerHTML += `<div><div class="chat-bubble" style="display: inline-block; max-width: 85%;">${reply}</div></div>`;
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }, 700);
-        }
-    </script>
 </body>
 </html>
