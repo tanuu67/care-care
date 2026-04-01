@@ -3,64 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care and Care | ECEI & NDIS Provider</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary: #006666; /* Teal */
-            --gold: #d4af37;
-            --gold-gradient: linear-gradient(to bottom, #fde48f, #cf9e38);
-            --bg-light: #f9fbfd;
-            --text-dark: #333;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
-
-        /* HEADER & MENU */
-        header { background: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-family: 'Great Vibes', cursive; font-size: 38px; color: var(--primary); text-decoration: none; font-weight: bold; }
-        nav { display: flex; gap: 30px; align-items: center; }
-        .nav-item { position: relative; padding: 10px 0; cursor: pointer; display: flex; align-items: center; }
-        .nav-link { text-decoration: none; color: #333; font-weight: 500; font-size: 16px; transition: 0.3s; }
-        .nav-link.active { color: var(--primary); }
-        .nav-item:hover .nav-link { color: var(--primary); }
-        .drop-arrow { font-size: 10px; color: #666; margin-left: 6px; }
-
-        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); min-width: 220px; border-radius: 8px; flex-direction: column; overflow: hidden; border: 1px solid #eee; padding: 10px 0; }
-        .nav-item:hover .dropdown-menu { display: flex; }
-        .dropdown-menu a { padding: 12px 20px; color: #555; text-decoration: none; border-bottom: 1px solid #f5f5f5; font-size: 14px; transition: 0.3s; }
-        .dropdown-menu a:hover { background: #f9fbfd; color: var(--primary); padding-left: 25px; }
-
-        /* HERO SECTION */
-        .hero { height: 90vh; min-height: 650px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; color: white; padding: 0 20px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 60px; font-weight: 600; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
-        .hero p { font-size: 20px; font-weight: 400; max-width: 750px; margin-bottom: 40px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); line-height: 1.5; }
-        .gold-btn { background: var(--gold-gradient); color: #000; font-weight: 700; font-size: 16px; padding: 15px 35px; border-radius: 50px; text-decoration: none; border: 2px solid rgba(255, 255, 255, 0.8); box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; }
-        .gold-btn:hover { transform: scale(1.05); }
-
-        /* TESTIMONIALS TICKER */
-        .ticker-wrapper { position: absolute; bottom: 40px; width: 100%; overflow: hidden; display: flex; align-items: center; }
-        .ticker-track { display: flex; gap: 20px; animation: scrollTicker 30s linear infinite; }
-        @keyframes scrollTicker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .ticker-item { display: flex; align-items: center; background: rgba(255, 255, 255, 0.95); padding: 5px 20px 5px 5px; border-radius: 50px; border: 2px solid var(--gold); white-space: nowrap; min-width: 320px; color: #333; }
-        .ticker-item img { width: 45px; height: 45px; border-radius: 50%; margin-right: 15px; }
-
-        /* FOOTER */
-        footer { background: #1a1a1a; color: white; padding: 60px 20px 20px 20px; margin-top: 50px; }
-        .footer-grid { display: flex; flex-wrap: wrap; gap: 40px; max-width: 1200px; margin: auto; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 20px; }
-        .footer-col { flex: 1; min-width: 220px; }
-        .footer-col h3 { color: var(--gold); margin-bottom: 20px; font-size: 20px; }
-        .footer-col p, .footer-col a { color: #aaa; text-decoration: none; font-size: 14px; margin-bottom: 10px; display: block; }
-    </style>
+    <title>Care and Care | Smooth ECEI & NDIS Provider</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">Careandcare</a>
+        <a href="index.html">
+            <img src="logo.png" alt="Care and Care Logo" class="brand-logo" onerror="this.outerHTML='<h2 style=\'color:#599fc4; font-family:Montserrat;\'>Care & Care</h2>'">
+        </a>
+        
         <nav>
             <div class="nav-item"><a href="index.html" class="nav-link active">Home</a></div>
             <div class="nav-item">
@@ -69,7 +21,7 @@
             </div>
             <div class="nav-item">
                 <span class="nav-link">NDIS Services <span class="drop-arrow">▼</span></span>
-                <div class="dropdown-menu"><a href="services.html#ecei">Early Childhood (ECEI)</a><a href="services.html#support">Support Coordination</a><a href="services.html#daily">Daily Personal Activities</a></div>
+                <div class="dropdown-menu"><a href="services.html#ecei">Early Childhood (ECEI)</a><a href="services.html#support">Support Coordination</a><a href="services.html#daily">Daily Activities</a></div>
             </div>
             <div class="nav-item">
                 <span class="nav-link">Plan Management <span class="drop-arrow">▼</span></span>
@@ -87,22 +39,50 @@
 
         <div class="ticker-wrapper">
             <div class="ticker-track">
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div style="font-size: 13px;"><strong>ECEI support was incredible! ❤️</strong><br><span style="color:#666; font-size:11px;">Parent - Sarah L.</span></div></div>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div style="font-size: 13px;"><strong>Amazing Plan Management. ❤️</strong><br><span style="color:#666; font-size:11px;">Participant - David T.</span></div></div>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div style="font-size: 13px;"><strong>ECEI support was incredible! ❤️</strong><br><span style="color:#666; font-size:11px;">Parent - Sarah L.</span></div></div>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div style="font-size: 13px;"><strong>Amazing Plan Management. ❤️</strong><br><span style="color:#666; font-size:11px;">Participant - David T.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div class="ticker-text"><strong>ECEI support was incredible! ❤️</strong><br><span>Parent - Sarah L.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div class="ticker-text"><strong>Amazing Plan Management. ❤️</strong><br><span>Participant - David T.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="pic"><div class="ticker-text"><strong>A truly life-changing partnership. ❤️</strong><br><span>Parent - Emma R.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div class="ticker-text"><strong>ECEI support was incredible! ❤️</strong><br><span>Parent - Sarah L.</span></div></div>
+                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div class="ticker-text"><strong>Amazing Plan Management. ❤️</strong><br><span>Participant - David T.</span></div></div>
             </div>
         </div>
     </section>
 
+    <a href="https://wa.me/61491649145" class="wa-float" target="_blank"><svg viewBox="0 0 24 24"><path d="M20.52 3.44A11.96 11.96 0 0 0 12 0a12 12 0 0 0-10.27 18.2L0 24l5.97-1.56A11.95 11.95 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.22-3.48-8.56zM12 22a9.96 9.96 0 0 1-5.1-1.4l-.36-.22-3.8.99 1.01-3.7-.23-.37A9.95 9.95 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10zm5.46-7.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.88-.8-1.47-1.78-1.64-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.48 1.7.62.71.22 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35z"/></svg></a>
+    
+    <button class="chat-toggle" onclick="toggleChat()"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">Care & Care Support <span onclick="toggleChat()">×</span></div>
+        <div class="chat-body" id="chatBody"><div class="msg-bot">Hi! 👋 I'm your Care & Care assistant. Ask me anything about our services.</div></div>
+        <div class="chat-input"><input type="text" id="chatInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()">➤</button></div>
+    </div>
+
     <footer>
         <div class="footer-grid">
-            <div class="footer-col"><h2 style="font-family:'Great Vibes', cursive; font-size:32px;">Careandcare</h2><p>For updated news & events, subscribe to our newsletter today!</p></div>
+            <div class="footer-col">
+                <img src="logo.png" alt="Logo" style="height:50px; margin-bottom:15px; filter: brightness(0) invert(1);" onerror="this.outerHTML='<h2 style=\'color:white; font-family:Montserrat;\'>Care & Care</h2>'">
+                <p>For updated news & events, subscribe to our newsletter today!</p>
+            </div>
             <div class="footer-col"><h3>Quick Links</h3><a href="index.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
-            <div class="footer-col"><h3>Contact Us</h3><p>Greenwood Business Park,<br>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p><p>Tel: 0491 649 145</p></div>
+            <div class="footer-col"><h3>Contact Us</h3><p>Greenwood Business Park,<br>301 Burwood Hwy, Burwood VIC 3125</p><p>Tel: 0491 649 145</p></div>
         </div>
-        <p style="text-align: center; color: #666; font-size: 13px;">© 2026 by Care & Care. Designed by PAGEFOURDESIGN</p>
+        <p style="text-align: center; color: #888; font-size: 14px;">© 2026 by Care & Care. Designed by PAGEFOURDESIGN</p>
     </footer>
 
+    <script>
+        function toggleChat() { document.getElementById("chatWindow").style.display = document.getElementById("chatWindow").style.display === "flex" ? "none" : "flex"; }
+        function sendMsg() {
+            let input = document.getElementById("chatInput");
+            if(!input.value) return;
+            let chatBody = document.getElementById("chatBody");
+            chatBody.innerHTML += `<div class="msg-user">${input.value}</div>`;
+            input.value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
+            setTimeout(() => {
+                chatBody.innerHTML += `<div class="msg-bot">Thanks for reaching out! Please contact us at 0491 649 145 or via WhatsApp for quick support.</div>`;
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 800);
+        }
+    </script>
 </body>
 </html>
