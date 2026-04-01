@@ -4,57 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Care and Care</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
-
-    <style>
-        /* (Same CSS as index.html for consistent look) */
-        :root { --primary: #006666; --gold: #d4af37; --bg-light: #f9fbfd; --text-dark: #333; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
-
-        header { background: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-family: 'Great Vibes', cursive; font-size: 38px; color: var(--primary); text-decoration: none; font-weight: bold; }
-        nav { display: flex; gap: 30px; align-items: center; }
-        .nav-item { position: relative; padding: 10px 0; cursor: pointer; display: flex; align-items: center; }
-        .nav-link { text-decoration: none; color: #333; font-weight: 500; font-size: 16px; transition: 0.3s; }
-        .nav-link.active { color: var(--primary); }
-        .nav-item:hover .nav-link { color: var(--primary); }
-        .drop-arrow { font-size: 10px; color: #666; margin-left: 6px; }
-        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); min-width: 220px; border-radius: 8px; flex-direction: column; overflow: hidden; border: 1px solid #eee; padding: 10px 0; }
-        .nav-item:hover .dropdown-menu { display: flex; }
-        .dropdown-menu a { padding: 12px 20px; color: #555; text-decoration: none; border-bottom: 1px solid #f5f5f5; font-size: 14px; transition: 0.3s; }
-        .dropdown-menu a:hover { background: #f9fbfd; color: var(--primary); padding-left: 25px; }
-
-        /* SERVICES HERO */
-        .services-hero { background: var(--primary); color: white; text-align: center; padding: 100px 20px 80px 20px; }
-        .services-hero h1 { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 20px; }
-        .services-hero p { font-size: 18px; max-width: 800px; margin: auto; opacity: 0.9; line-height: 1.6; }
-
-        /* SERVICES CONTENT */
-        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-        .service-card { display: flex; flex-wrap: wrap; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 40px; overflow: hidden; align-items: center; border-left: 5px solid var(--primary); }
-        .service-img { flex: 1; min-width: 300px; }
-        .service-img img { width: 100%; height: 100%; object-fit: cover; min-height: 350px; }
-        .service-content { flex: 1.5; padding: 40px; min-width: 300px; }
-        .service-content h2 { font-family: 'Playfair Display', serif; color: var(--primary); font-size: 32px; margin-bottom: 15px; }
-        .service-content p { color: #555; font-size: 16px; line-height: 1.7; margin-bottom: 20px; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 500; }
-
-        /* FOOTER */
-        footer { background: #1a1a1a; color: white; padding: 60px 20px 20px 20px; margin-top: 50px; }
-        .footer-grid { display: flex; flex-wrap: wrap; gap: 40px; max-width: 1200px; margin: auto; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 20px; }
-        .footer-col { flex: 1; min-width: 220px; }
-        .footer-col h3 { color: var(--gold); margin-bottom: 20px; font-size: 20px; }
-        .footer-col p, .footer-col a { color: #aaa; text-decoration: none; font-size: 14px; margin-bottom: 10px; display: block; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">Careandcare</a>
+        <a href="index.html"><img src="logo.png" alt="Care and Care Logo" class="brand-logo" onerror="this.outerHTML='<h2 style=\'color:#599fc4; font-family:Montserrat;\'>Care & Care</h2>'"></a>
         <nav>
             <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
             <div class="nav-item">
@@ -63,7 +18,7 @@
             </div>
             <div class="nav-item">
                 <span class="nav-link active">NDIS Services <span class="drop-arrow">▼</span></span>
-                <div class="dropdown-menu"><a href="#ecei">Early Childhood (ECEI)</a><a href="#support">Support Coordination</a><a href="#daily">Daily Personal Activities</a></div>
+                <div class="dropdown-menu"><a href="services.html#ecei">Early Childhood (ECEI)</a><a href="services.html#support">Support Coordination</a></div>
             </div>
             <div class="nav-item">
                 <span class="nav-link">Plan Management <span class="drop-arrow">▼</span></span>
@@ -74,39 +29,37 @@
         </nav>
     </header>
 
-    <div class="services-hero">
+    <div class="hero" style="height: 50vh; min-height: 400px; background: linear-gradient(rgba(44, 104, 136, 0.8), rgba(44, 104, 136, 0.7));">
         <h1>Let us guide you through the NDIS.</h1>
-        <p>Choosing a partner who truly understands what matters most to you is important. Let us guide you through the NDIS journey to achieve your goals together.</p>
+        <p>Choosing a partner who truly understands what matters most to you is important.</p>
     </div>
 
     <div class="container">
-        <div class="service-card" id="ecei">
-            <div class="service-content">
-                <h2>Early Childhood Early Intervention (ECEI)</h2>
-                <p>The early years are critical. Our specialized ECEI team works closely with children aged 0-6 years who have developmental delays or disabilities. We focus on building your child's capacity and confidence through tailored, play-based strategies.</p>
-                <a href="contact.html" class="btn">Enquire Now</a>
+        <h2 class="section-title">Our Specialized Services</h2>
+        <div class="grid">
+            <div class="card" id="ecei">
+                <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="ECEI">
+                <div class="card-content">
+                    <h3>Early Childhood (ECEI)</h3>
+                    <p>The early years are critical. Our specialized ECEI team works closely with children aged 0-6 years who have developmental delays to build confidence through play-based strategies.</p>
+                </div>
             </div>
-            <div class="service-img"><img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=800&q=80" alt="ECEI"></div>
-        </div>
-
-        <div class="service-card" id="support">
-            <div class="service-img" style="order: -1;"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Support Coordination"></div>
-            <div class="service-content">
-                <h2>Support Coordination</h2>
-                <p>Navigating the NDIS can be overwhelming. Our experienced Support Coordinators are here to take the stress away. We help you understand your plan, connect with the right providers, and maximize your funded supports.</p>
-                <a href="contact.html" class="btn">Enquire Now</a>
+            <div class="card" id="support">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Support Coordination">
+                <div class="card-content">
+                    <h3>Support Coordination</h3>
+                    <p>Navigating the NDIS can be overwhelming. We help you understand your plan, connect with the right providers, and maximize your funded supports efficiently.</p>
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-grid">
-            <div class="footer-col"><h2 style="font-family:'Great Vibes', cursive; font-size:32px;">Careandcare</h2><p>Working together on a long journey to fulfill the goals.</p></div>
+            <div class="footer-col"><img src="logo.png" alt="Logo" style="height:50px; filter: brightness(0) invert(1);" onerror="this.outerHTML='<h2 style=\'color:white;\'>Care & Care</h2>'"><p>Subscribe to our newsletter today!</p></div>
             <div class="footer-col"><h3>Quick Links</h3><a href="index.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
-            <div class="footer-col"><h3>Contact Us</h3><p>Greenwood Business Park,<br>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p><p>Tel: 0491 649 145</p></div>
+            <div class="footer-col"><h3>Contact Us</h3><p>301 Burwood Hwy, Burwood VIC 3125</p><p>Tel: 0491 649 145</p></div>
         </div>
-        <p style="text-align: center; color: #666; font-size: 13px;">© 2026 by Care & Care. Designed by PAGEFOURDESIGN</p>
     </footer>
-
 </body>
 </html>
