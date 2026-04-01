@@ -3,18 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care and Care | NDIS Provider Australia</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care and Care | ECEI & NDIS Provider Australia</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Care and Care | Premium ECEI & NDIS Provider</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables for Colors */
+        :root {
+            --primary-dark: #0f2c4a; /* Deep Navy Blue */
+            --primary-light: #16406b;
+            --accent-gold: #fca311; /* Premium Golden Yellow from your image */
+            --text-dark: #1a1a1a;
+            --text-light: #555555;
+            --bg-color: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Smooth Scrolling & Fonts */
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.7; font-family: 'Nunito', sans-serif; overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6, .logo, .chat-head { font-family: 'Montserrat', sans-serif; color: var(--primary-dark); }
+
+        /* Accessibility Bar */
+        .access-bar { background-color: var(--primary-dark); color: white; padding: 8px 25px; text-align: right; font-size: 13px; }
+        .access-bar button { background-color: transparent; border: 1px solid rgba(255,255,255,0.3); padding: 4px 12px; margin-left: 8px; cursor: pointer; border-radius: 20px; font-weight: bold; color: white; font-family: 'Montserrat', sans-serif; transition: 0.3s; }
+        .access-bar button:hover { background-color: var(--accent-gold); color: var(--primary-dark); border-color: var(--accent-gold); }
+
+        /* Premium Header */
+        header { background: rgba(255, 255, 255, 0.95); padding: 20px 50px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; color: var(--primary-dark); text-decoration: none; font-weight: 800; letter-spacing: -1px; }
+        nav a { margin: 0 18px; text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 16px; transition: 0.3s; font-family: 'Montserrat', sans-serif; }
+        nav a:hover { color: var(--accent-gold); }
+
+        /* Hero Section (Updated Background & Overlay) */
+        .hero { 
+            text-align: center; 
+            padding: 150px 20px; 
+            color: white; 
+            position: relative;
+            /* Child Care Image with Dark Blue Overlay */
+            background: linear-gradient(rgba(15, 44, 74, 0.6), rgba(15, 44, 74, 0.7)), url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-attachment: fixed; /* Smooth Parallax Effect */
+        }
+        .hero h1 { font-size: 55px; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); color: white; font-weight: 800; letter-spacing: -1px; }
+        .hero p { font-size: 22px; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); font-family: 'Nunito', sans-serif; }
+        
+        /* Premium Golden Button */
+        .btn { display: inline-block; background-color: var(--accent-gold); color: var(--primary-dark); padding: 16px 40px; font-size: 18px; text-decoration: none; border-radius: 50px; box-shadow: 0 8px 20px rgba(252, 163, 17, 0.4); transition: all 0.3s ease; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+        .btn:hover { background-color: #ffb703; transform: translateY(-4px); box-shadow: 0 12px 25px rgba(252, 163, 17, 0.6); }
+
+        /* Container & Grid */
+        .container { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 40px; font-weight: 800; }
+        .grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
+
+        /* Services Cards */
+        .card { background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); overflow: hidden; width: 350px; transition: all 0.4s ease; border: 1px solid #f0f0f0; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .card img { width: 100%; height: 230px; object-fit: cover; }
+        .card-content { padding: 30px; }
+        .card-content h3 { font-size: 22px; margin-bottom: 12px; }
+
+        /* RUNNING TESTIMONIALS (Auto-Scrolling Slider) */
+        .testimonial-slider { overflow: hidden; white-space: nowrap; position: relative; width: 100%; padding: 20px 0; }
+        .testimonial-track { display: inline-flex; gap: 30px; animation: scroll 25s linear infinite; }
+        .testimonial-track:hover { animation-play-state: paused; } /* Stops when mouse hovers */
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Scrolls exactly half its width (duplicates) */
+        }
+
+        .testimonial-card { white-space: normal; background: white; padding: 35px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.04); width: 400px; flex-shrink: 0; position: relative; border-left: 5px solid var(--accent-gold); }
+        .testimonial-card p { font-style: italic; font-size: 16px; margin-bottom: 15px; }
+        .testimonial-card h4 { font-weight: 700; font-size: 18px; color: var(--primary-dark); }
+        .testimonial-card span { color: var(--accent-gold); font-size: 20px; }
+
+        /* Mega Footer */
+        footer { background: var(--primary-dark); color: white; padding: 70px 20px 30px 20px; }
+        .footer-grid { display: flex; flex-wrap: wrap; gap: 50px; max-width: 1200px; margin: auto; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 50px; margin-bottom: 30px; }
+        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col h3 { color: var(--accent-gold); margin-bottom: 25px; font-size: 22px; }
+        .footer-col p, .footer-col a { color: #d1d5db; text-decoration: none; font-size: 16px; margin-bottom: 12px; display: block; transition: 0.3s; }
+        .footer-col a:hover { color: var(--accent-gold); padding-left: 5px; }
+        .newsletter { display: flex; margin-top: 20px; }
+        .newsletter input { padding: 12px 15px; border: none; border-radius: 6px 0 0 6px; outline: none; width: 100%; font-family: 'Nunito', sans-serif; }
+        .newsletter button { padding: 12px 25px; background: var(--accent-gold); border: none; color: var(--primary-dark); border-radius: 0 6px 6px 0; cursor: pointer; font-weight: bold; font-family: 'Montserrat', sans-serif; transition: 0.3s; }
+        .newsletter button:hover { background: #ffb703; }
+        .copyright { text-align: center; color: #888; font-size: 15px; }
+
+        /* WhatsApp & Chatbot Floats */
+        .wa-btn { position: fixed; width: 65px; height: 65px; bottom: 30px; left: 30px; background-color: #25d366; border-radius: 50px; display: flex; justify-content: center; align-items: center; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 9999; transition: 0.3s; }
+        .wa-btn:hover { transform: scale(1.1); }
+        .wa-btn img { width: 38px; height: 38px; }
+
+        .chat-toggle { position: fixed; bottom: 30px; right: 30px; background: var(--primary-dark); color: white; border: none; border-radius: 50%; width: 65px; height: 65px; font-size: 30px; cursor: pointer; box-shadow: 0 8px 25px rgba(0,0,0,0.3); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+        .chat-toggle:hover { background: var(--accent-gold); color: var(--primary-dark); transform: scale(1.1); }
+        
+        .chat-box { position: fixed; bottom: 110px; right: 30px; width: 340px; background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); display: none; flex-direction: column; z-index: 9999; overflow: hidden; border: 1px solid #eee; }
+        .chat-head { background: var(--primary-dark); color: white; padding: 18px; text-align: center; font-size: 16px; position: relative; font-weight: 700; }
+        .chat-close { position: absolute; right: 20px; top: 15px; cursor: pointer; font-size: 24px; color: white; }
+        .chat-msgs { padding: 20px; height: 300px; overflow-y: auto; background: #f8f9fa; font-size: 15px; }
+        .msg-bot { background: #e9ecef; padding: 12px 18px; border-radius: 15px; border-bottom-left-radius: 2px; display: inline-block; margin-bottom: 15px; max-width: 85%; color: #333; }
+        .msg-user { background: var(--primary-dark); color: white; padding: 12px 18px; border-radius: 15px; border-bottom-right-radius: 2px; display: inline-block; max-width: 85%; text-align: left; }
+        .chat-input { display: flex; padding: 15px; border-top: 1px solid #eee; background: white; }
+        .chat-input input { flex: 1; padding: 12px 15px; border: 1px solid #ddd; border-radius: 25px; outline: none; font-size: 15px; font-family: 'Nunito', sans-serif; }
+        .chat-input button { background: var(--accent-gold); color: var(--primary-dark); border: none; padding: 12px 18px; margin-left: 10px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+        .chat-input button:hover { transform: scale(1.1); }
+    </style>
 </head>
 <body>
+
     <div class="access-bar">
         <span>Text Size:</span>
         <button onclick="changeTextSize(1)">A+</button>
@@ -31,46 +133,68 @@
         </nav>
     </header>
 
-    <section class="hero" style="background: linear-gradient(rgba(29, 53, 87, 0.7), rgba(29, 53, 87, 0.7)), url('https://images.unsplash.com/photo-1587691592099-24045742c181?auto=format&fit=crop&w=1920&q=80') center/cover;">
+    <section class="hero">
         <h1>Nurturing Potential, Empowering Lives</h1>
         <p>Your trusted NDIS partner specializing in Early Childhood Early Intervention (ECEI) and personalized care across Australia.</p>
         <a href="contact.html" class="btn">Book a Free Consultation</a>
     </section>
 
     <div class="container">
-        <h2 class="section-title">Why Choose Care & Care?</h2>
+        <h2 class="section-title">Our Premium Services</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?auto=format&fit=crop&w=600&q=80" alt="Child Care Professional">
+                <img src="https://images.unsplash.com/photo-1560859252-4752b5cb3dbb?auto=format&fit=crop&w=600&q=80" alt="ECEI">
                 <div class="card-content">
-                    <h3>Expert Child Care</h3>
-                    <p>Our compassionate team specializes in early childhood development to ensure your child reaches their full potential.</p>
+                    <h3>Early Childhood (ECEI)</h3>
+                    <p>Designed for children aged 0-6 years. We provide early support to help children achieve their developmental milestones in a loving environment.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=600&q=80" alt="Registered Provider">
+                <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="Support Coordination">
                 <div class="card-content">
-                    <h3>Registered NDIS Provider</h3>
-                    <p>Fully compliant with NDIS Quality and Safeguards Commission, ensuring the highest standards of safety.</p>
+                    <h3>Support Coordination</h3>
+                    <p>We help you understand your NDIS plan, connect with community services, and manage your budget effectively for your family.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container" style="background: #e0f2f1; padding: 60px 20px; border-radius: 15px; margin-bottom: 60px;">
-        <h2 class="section-title" style="margin-bottom: 40px;">What Our Families Say</h2>
-        <div class="grid">
-            <div class="testimonial-card">
-                "The ECEI team at Care and Care has been incredible. My son has shown so much progress in his communication skills within just a few months. Highly recommended!"
-                <h4>- Sarah M., Parent</h4>
-            </div>
-            <div class="testimonial-card">
-                "Finding the right Support Coordinator was stressful until we found Care and Care. They explained the NDIS plan perfectly and connected us with the best therapists."
-                <h4>- David T., Participant</h4>
-            </div>
-            <div class="testimonial-card">
-                "Their staff is genuinely caring and professional. It brings me peace of mind knowing my daughter is receiving the best early childhood intervention."
-                <h4>- Emma R., Mother</h4>
+    <div style="background: var(--primary-dark); padding: 80px 0; overflow: hidden; margin-top: 50px;">
+        <h2 class="section-title" style="color: white; margin-bottom: 50px;">What Our Families Say</h2>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+                <div class="testimonial-card">
+                    <span>★★★★★</span>
+                    <p>"The ECEI team at Care and Care has been incredible. My son has shown so much progress in his communication skills within just a few months. Highly recommended!"</p>
+                    <h4>- Sarah M., Parent</h4>
+                </div>
+                <div class="testimonial-card">
+                    <span>★★★★★</span>
+                    <p>"Finding the right Support Coordinator was stressful until we found Care and Care. They explained the NDIS plan perfectly and connected us with the best therapists."</p>
+                    <h4>- David T., Participant</h4>
+                </div>
+                <div class="testimonial-card">
+                    <span>★★★★★</span>
+                    <p>"Their staff is genuinely caring and professional. It brings me peace of mind knowing my daughter is receiving the best early childhood intervention."</p>
+                    <h4>- Emma R., Mother</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <span>★★★★★</span>
+                    <p>"The ECEI team at Care and Care has been incredible. My son has shown so much progress in his communication skills within just a few months. Highly recommended!"</p>
+                    <h4>- Sarah M., Parent</h4>
+                </div>
+                <div class="testimonial-card">
+                    <span>★★★★★</span>
+                    <p>"Finding the right Support Coordinator was stressful until we found Care and Care. They explained the NDIS plan perfectly and connected us with the best therapists."</p>
+                    <h4>- David T., Participant</h4>
+                </div>
+                <div class="testimonial-card">
+                    <span>★★★★★</span>
+                    <p>"Their staff is genuinely caring and professional. It brings me peace of mind knowing my daughter is receiving the best early childhood intervention."</p>
+                    <h4>- Emma R., Mother</h4>
+                </div>
             </div>
         </div>
     </div>
@@ -78,7 +202,7 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h2 style="color: var(--primary-color); margin-bottom: 15px; font-family: 'Poppins', sans-serif;">Care and Care</h2>
+                <h2 style="color: var(--accent-gold); margin-bottom: 15px; font-family: 'Montserrat', sans-serif; font-weight: 800;">Care and Care</h2>
                 <p>For updated news & events, subscribe to our newsletter today!</p>
                 <div class="newsletter">
                     <input type="email" placeholder="Your email address">
@@ -87,7 +211,7 @@
             </div>
             <div class="footer-col">
                 <h3>Quick Links</h3>
-                <a href="#">About</a>
+                <a href="index.html">About</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
                 <a href="contact.html">Make a Referral</a>
@@ -95,83 +219,75 @@
             <div class="footer-col">
                 <h3>Contact Us</h3>
                 <p><strong>Address:</strong><br>Greenwood Business Park,<br>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p>
-                <p><strong>Tel:</strong> <a href="tel:0491649145" style="display:inline; color:var(--secondary-color);">0491 649 145</a></p>
-                <p><strong>Email:</strong> <a href="mailto:Info@careandcare.com.au" style="display:inline; color:var(--secondary-color);">Info@careandcare.com.au</a></p>
+                <p><strong>Tel:</strong> <a href="tel:0491649145" style="display:inline; color:var(--accent-gold);">0491 649 145</a></p>
+                <p><strong>Email:</strong> <a href="mailto:Info@careandcare.com.au" style="display:inline; color:var(--accent-gold);">Info@careandcare.com.au</a></p>
             </div>
             <div class="footer-col">
                 <h3>Operating Hours</h3>
                 <p><strong>Monday to Friday:</strong><br>9am - 5pm AEST</p>
-                <p><strong>Saturday & Sunday:</strong><br>Closed</p>
+                <p><strong>Sat & Sun:</strong> Closed</p>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p>
-        </div>
+        <div class="copyright"><p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p></div>
     </footer>
 
     <a href="https://wa.me/61491649145" class="wa-btn" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
-    <button class="chat-toggle" onclick="toggleChat()">💬</button>
-    <div class="chat-box" id="aiChat">
-        <div class="chat-head">Care & Care Support <span class="chat-close" onclick="toggleChat()">×</span></div>
-        <div class="chat-msgs" id="chatMsgs"><div><div class="msg-bot">Hi there! 👋 I'm your Care & Care virtual assistant. How can I help you today?</div></div></div>
-        <div class="chat-input"><input type="text" id="chatVal" placeholder="Ask a question..." onkeypress="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()">➤</button></div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-    <div class="access-bar">
-        <span>Text Size:</span>
-        <button onclick="changeTextSize(1)">A+</button>
-        <button onclick="changeTextSize(-1)">A-</button>
-        <button onclick="changeTextSize(0)">Reset</button>
-    </div>
-
-    <header>
-        <a href="index.html" class="logo">Care and Care</a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Make a Referral</a>
-        </nav>
-    </header>
-
-    <section class="hero" style="background: linear-gradient(rgba(0, 43, 94, 0.7), rgba(0, 43, 94, 0.7)), url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1920&q=80') center/cover;">
-        <h1>Your Trusted NDIS & ECEI Partner</h1>
-        <p>Empowering individuals with disabilities to live life to the fullest. We provide personalized, premium support across Australia.</p>
-        <a href="contact.html" class="btn">Book a Free Consultation</a>
-    </section>
-
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 40px; color: #002b5e; font-size: 32px;">Why Choose Care & Care?</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=600&q=80" alt="Professional Care">
-                <div class="card-content">
-                    <h3>Experienced Professionals</h3>
-                    <p>Our team consists of qualified support coordinators and therapists passionate about making a real difference.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=600&q=80" alt="Registered Provider">
-                <div class="card-content">
-                    <h3>Registered & Compliant</h3>
-                    <p>We strictly adhere to the NDIS Quality and Safeguards Commission guidelines for your safety.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer><p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p></footer>
-
-    <a href="https://wa.me/61XXXXXXXXX" class="wa-btn" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
     
     <button class="chat-toggle" onclick="toggleChat()">💬</button>
     <div class="chat-box" id="aiChat">
         <div class="chat-head">Care & Care Support <span class="chat-close" onclick="toggleChat()">×</span></div>
         <div class="chat-msgs" id="chatMsgs"><div><div class="msg-bot">Hi there! 👋 I'm your Care & Care virtual assistant. How can I help you today?</div></div></div>
-        <div class="chat-input"><input type="text" id="chatVal" placeholder="Ask a question..." onkeypress="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()">➤</button></div>
+        <div class="chat-input">
+            <input type="text" id="chatVal" placeholder="Ask a question..." onkeypress="if(event.key==='Enter') sendMsg()">
+            <button onclick="sendMsg()">➤</button>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Text Zoom
+        let currentZoom = 100;
+        function changeTextSize(action) {
+            if (action === 0) currentZoom = 100;
+            else currentZoom += action * 10;
+            if (currentZoom >= 90 && currentZoom <= 140) document.body.style.zoom = currentZoom + "%";
+        }
+
+        // Chatbot Logic
+        const botAnswers = {
+            "ndis": "NDIS provides funding to eligible people with disability. We can help you utilize your plan effectively.",
+            "ecei": "Our ECEI program supports children aged 0-6 years with developmental delays.",
+            "referral": "You can make a referral easily by clicking 'Make a Referral' in the menu.",
+            "contact": "Call us at 0491 649 145 or chat with us on WhatsApp.",
+            "hello": "Hello! Welcome to Care & Care. How can I help you?",
+            "hi": "Hi there! Looking for child care or disability support?",
+            "default": "For more info, please call 0491 649 145 or click the WhatsApp button to chat with our team!"
+        };
+
+        function toggleChat() { 
+            let box = document.getElementById("aiChat"); 
+            box.style.display = box.style.display === "flex" ? "none" : "flex"; 
+        }
+
+        function sendMsg() {
+            let input = document.getElementById("chatVal");
+            let text = input.value.trim();
+            if(!text) return;
+            
+            let msgs = document.getElementById("chatMsgs");
+            msgs.innerHTML += `<div style="text-align: right; margin-bottom: 15px;"><div class="msg-user">${text}</div></div>`;
+            input.value = "";
+            msgs.scrollTop = msgs.scrollHeight;
+            
+            setTimeout(() => {
+                let textLower = text.toLowerCase();
+                let reply = botAnswers["default"];
+                for(let key in botAnswers) {
+                    if(textLower.includes(key)) { reply = botAnswers[key]; break; }
+                }
+                msgs.innerHTML += `<div><div class="msg-bot">${reply}</div></div>`;
+                msgs.scrollTop = msgs.scrollHeight;
+            }, 600);
+        }
+    </script>
 </body>
 </html>
