@@ -105,4 +105,194 @@
         /* --- ABOUT SPLIT --- */
         .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .about-img { width: 100%; height: 600px; object-fit: cover; border-radius: 20px; filter: grayscale(30%); transition: var(--transition); }
-        .about-img:hover { filter: grayscale
+        .about-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+
+        /* --- FOOTER --- */
+        footer { border-top: 1px solid var(--border-color); padding: 80px 5% 40px; z-index: 10; position: relative; }
+        .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 80px; }
+        .foot-title { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 30px; }
+        .foot-link { color: var(--text-primary); text-decoration: none; font-size: 18px; margin-bottom: 15px; display: block; transition: var(--transition); }
+        .foot-link:hover { color: var(--accent-blue); padding-left: 10px; }
+        .huge-text { font-family: 'Cormorant Garamond', serif; font-size: 12vw; line-height: 1; text-align: center; color: rgba(255,255,255,0.03); margin-top: 50px; }
+
+        /* --- WIDGETS --- */
+        .widget-btn { position: fixed; bottom: 40px; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 1px solid rgba(255,255,255,0.1); background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); z-index: 99; transition: var(--transition); }
+        .wa-btn { right: 40px; }
+        .wa-btn svg { fill: var(--text-primary); width: 24px; height: 24px; transition: 0.3s; }
+        .wa-btn:hover { background: #25d366; border-color: #25d366; }
+        .wa-btn:hover svg { fill: #fff; }
+    </style>
+</head>
+<body>
+
+    <div class="spotlight" id="spotlight"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <header>
+        <a href="#" class="logo">Cure<span>&</span>Care</a>
+        <nav>
+            <a href="#services" class="nav-link interactive">Services</a>
+            <a href="#about" class="nav-link interactive">About</a>
+            <a href="#contact" class="nav-link interactive">Contact</a>
+            <a href="tel:0422721800" class="nav-link interactive" style="color: var(--accent-gold);">Call Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                <div class="reveal-wrap"><div class="reveal-text">Tailored Care</div></div><br>
+                <div class="reveal-wrap"><div class="reveal-text">in <i>Australia.</i></div></div>
+            </h1>
+            <p class="fade-up delay-1">As a trusted NDIS provider in Melbourne, we deliver deeply personalized support to help participants live meaningful, independent lives.</p>
+            <div class="fade-up delay-2" style="margin-top: 40px;">
+                <a href="#services" class="btn-magnetic interactive" id="mag-btn">Explore<br>Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-split">
+            <div class="fade-up">
+                <span class="sec-subtitle">Our Philosophy</span>
+                <h2 class="sec-title">Experience Comprehensive Support.</h2>
+                <p style="color: var(--text-secondary); font-size: 18px; margin-bottom: 20px;">When it comes to providing NDIS support, we craft individual plans to ensure every participant reaches their unique goals. Our approach is entirely bespoke.</p>
+                <p style="color: var(--text-secondary); font-size: 18px;">Our expert support workers in Melbourne coordinate seamlessly with families, delivering quality care that impacts life positively.</p>
+            </div>
+            <div class="fade-up delay-1">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Care" class="about-img interactive">
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <span class="sec-subtitle fade-up">Expertise</span>
+        <h2 class="sec-title fade-up">NDIS Support Services.</h2>
+        
+        <div class="grid-3">
+            <div class="service-card interactive card-glow fade-up">
+                <span class="card-icon">🏠</span>
+                <h3>Supported Accommodation</h3>
+                <p>Experience safe and supportive independent living (SIL). Our dedicated team ensures your daily needs are met in a comfortable home environment.</p>
+            </div>
+            <div class="service-card interactive card-glow fade-up" style="transition-delay: 0.1s;">
+                <span class="card-icon">🤝</span>
+                <h3>Capacity Building</h3>
+                <p>With our capacity building support, participants can accomplish various tasks and live independently with absolute confidence.</p>
+            </div>
+            <div class="service-card interactive card-glow fade-up" style="transition-delay: 0.2s;">
+                <span class="card-icon">🚗</span>
+                <h3>Travel & Transport</h3>
+                <p>Assistance with travel arrangements to help you seamlessly connect with your community and attend important appointments safely.</p>
+            </div>
+            <div class="service-card interactive card-glow fade-up">
+                <span class="card-icon">✨</span>
+                <h3>Daily Personal Activities</h3>
+                <p>Respectful and dignified assistance with personal care routines to help you maintain your health and wellbeing.</p>
+            </div>
+            <div class="service-card interactive card-glow fade-up" style="transition-delay: 0.1s;">
+                <span class="card-icon">🏡</span>
+                <h3>In Home Support</h3>
+                <p>Professional and compassionate support delivered right to your doorstep, tailored exactly to your unique requirements.</p>
+            </div>
+            <div class="service-card interactive card-glow fade-up" style="transition-delay: 0.2s;">
+                <span class="card-icon">🌟</span>
+                <h3>Community Participation</h3>
+                <p>Encouraging social inclusion by supporting you to participate actively in community events, hobbies, and social activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="foot-grid fade-up">
+            <div>
+                <a href="#" class="logo" style="margin-bottom: 20px; display: block;">Cure<span>&</span>Care</a>
+                <p style="color: var(--text-secondary); max-width: 300px;">Your Trusted Partner in Care and Support in Melbourne.</p>
+            </div>
+            <div>
+                <h4 class="foot-title">Connect</h4>
+                <a href="tel:0422721800" class="foot-link interactive">0422 721 800</a>
+                <a href="mailto:admin@cureandcare.com.au" class="foot-link interactive">admin@cureandcare.com.au</a>
+            </div>
+            <div>
+                <h4 class="foot-title">Location</h4>
+                <p style="color: var(--text-primary); font-size: 18px;">Melbourne, Australia<br><span style="font-size: 14px; color: var(--text-secondary);">Available 24 hours</span></p>
+            </div>
+        </div>
+        <div class="huge-text">CURE & CARE</div>
+    </footer>
+
+    <a href="https://wa.me/61422721800" class="widget-btn wa-btn interactive" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M20.52 3.44A11.96 11.96 0 0 0 12 0a12 12 0 0 0-10.27 18.2L0 24l5.97-1.56A11.95 11.95 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.22-3.48-8.56zM12 22a9.96 9.96 0 0 1-5.1-1.4l-.36-.22-3.8.99 1.01-3.7-.23-.37A9.95 9.95 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10zm5.46-7.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.88-.8-1.47-1.78-1.64-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.48 1.7.62.71.22 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35z"/></svg>
+    </a>
+
+    <script>
+        /* --- SPOTLIGHT EFFECT --- */
+        const spotlight = document.getElementById('spotlight');
+        window.addEventListener('mousemove', e => {
+            spotlight.style.setProperty('--x', `${e.clientX}px`);
+            spotlight.style.setProperty('--y', `${e.clientY}px`);
+        });
+
+        /* --- CARD HOVER GLOW EFFECT --- */
+        document.querySelectorAll('.card-glow').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        /* --- CUSTOM CURSOR --- */
+        const dot = document.getElementById('cursor-dot');
+        const outline = document.getElementById('cursor-outline');
+        window.addEventListener('mousemove', e => {
+            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
+            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+        });
+
+        document.querySelectorAll('.interactive').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                outline.style.width = '60px'; outline.style.height = '60px';
+                outline.style.borderColor = 'var(--text-primary)';
+                dot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            });
+            el.addEventListener('mouseleave', () => {
+                outline.style.width = '40px'; outline.style.height = '40px';
+                outline.style.borderColor = 'var(--accent-blue)';
+                dot.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        });
+
+        /* --- MAGNETIC BUTTON --- */
+        const magBtn = document.getElementById('mag-btn');
+        magBtn.addEventListener('mousemove', e => {
+            const rect = magBtn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            magBtn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        magBtn.addEventListener('mouseleave', () => magBtn.style.transform = 'translate(0,0)');
+
+        /* --- SCROLL REVEAL ANIMATIONS --- */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-up, .reveal-text').forEach((el) => observer.observe(el));
+
+        // Trigger initial hero animations
+        setTimeout(() => {
+            document.querySelectorAll('.hero .reveal-text').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('.hero .delay-1').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('.hero .delay-2').forEach(el => el.classList.add('visible'));
+        }, 100);
+    </script>
+</body>
+</html>
