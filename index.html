@@ -3,495 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care & Care | Premium NDIS & Childcare Services</title>
-    <meta name="description" content="Premium NDIS provider specializing in ECEI, Support Coordination, and Plan Management.">
+    <title>Cure & Care | Luxury NDIS Services Melbourne</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@500;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- COLORFUL DARK THEME VARIABLES --- */
+        /* --- ULTRA LUXURY VARIABLES --- */
         :root {
-            --primary-bg: #050a14; /* Deep Midnight Blue/Black */
-            --card-bg: rgba(10, 20, 40, 0.7); 
-            --gold: #d4af37; /* Premium Gold */
-            --text-main: #ffffff; 
-            --text-muted: #a0a8b9; 
-            
-            /* Vibrant Childcare Accent Colors */
-            --child-orange: #ff9f43; 
-            --child-green: #2ecc71; 
-            --child-blue: #3498db; 
-            --child-pink: #f368e0; 
-
-            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            --bg-color: #030712; /* Deepest Midnight Blue */
+            --surface-color: rgba(15, 23, 42, 0.6);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --accent-gold: #f59e0b;
+            --accent-blue: #38bdf8;
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
         html { scroll-behavior: smooth; }
         body { 
-            font-family: 'Nunito', sans-serif; 
-            background-color: var(--primary-bg); 
-            color: var(--text-main); 
-            overflow-x: hidden; 
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Outfit', sans-serif; background-color: var(--bg-color); color: var(--text-primary); 
+            overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, .nav-link, .premium-btn { font-family: 'Montserrat', sans-serif; }
+        h1, h2, .serif-font { font-family: 'Cormorant Garamond', serif; }
 
-        /* --- 1. PRELOADER --- */
-        .preloader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-            background: var(--primary-bg); z-index: 999999;
-            display: flex; justify-content: center; align-items: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+        /* --- SPOTLIGHT EFFECT (BACKGROUND) --- */
+        .spotlight {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;
+            background: radial-gradient(circle 600px at var(--x, 50%) var(--y, 50%), rgba(56, 189, 248, 0.1), transparent 80%);
         }
-        .preloader.hidden { opacity: 0; visibility: hidden; }
-        .preloader-text {
-            color: var(--child-blue); font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -1px;
-            animation: pulse 1.5s infinite alternate;
-        }
-        @keyframes pulse { 0% { opacity: 0.5; transform: scale(0.98); } 100% { opacity: 1; transform: scale(1.05); } }
 
-        /* --- 2. CUSTOM CURSOR --- */
-        .cursor-dot { position: fixed; top: 0; left: 0; width: 10px; height: 10px; background-color: var(--child-blue); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999999; pointer-events: none; mix-blend-mode: screen; transition: width 0.3s, height 0.3s; }
-        .cursor-outline { position: fixed; top: 0; left: 0; width: 40px; height: 40px; border: 2px solid rgba(52, 152, 219, 0.5); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999998; pointer-events: none; transition: width 0.3s, height 0.3s, background-color 0.3s; }
-        @media (hover: none) and (pointer: coarse) { * { cursor: auto !important; } .cursor-dot, .cursor-outline { display: none; } }
+        /* --- FLOATING ORBS --- */
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; z-index: 0; animation: float 20s infinite ease-in-out alternate; }
+        .orb-1 { width: 400px; height: 400px; background: #38bdf8; top: -100px; left: -100px; }
+        .orb-2 { width: 500px; height: 500px; background: #3b82f6; bottom: -200px; right: -100px; animation-delay: -5s; }
+        @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(100px, 100px); } }
 
-        /* --- 3. SCROLL PROGRESS BAR --- */
-        .scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(to right, var(--child-green), var(--child-blue), var(--child-pink)); z-index: 10001; transition: width 0.1s; }
+        /* --- CUSTOM CURSOR --- */
+        .cursor-dot { position: fixed; width: 8px; height: 8px; background: var(--text-primary); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background 0.3s; mix-blend-mode: difference; }
+        .cursor-outline { position: fixed; width: 40px; height: 40px; border: 1px solid var(--accent-blue); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s; }
+        @media (hover: none) and (pointer: coarse) { * { cursor: auto !important; } .cursor-dot, .cursor-outline, .spotlight { display: none; } }
 
-        /* --- 4. FADE ANIMATIONS --- */
-        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+        /* --- ANIMATIONS --- */
+        .reveal-wrap { overflow: hidden; display: inline-block; vertical-align: bottom; }
+        .reveal-text { transform: translateY(100%); transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-text.visible { transform: translateY(0); }
+        
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 1s ease, transform 1s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* --- HEADER & NAV --- */
+        /* --- HEADER --- */
         header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000; 
-            background: rgba(5, 10, 20, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 1px solid rgba(255,255,255,0.05); box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            position: fixed; width: 100%; top: 0; z-index: 100; padding: 20px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(3, 7, 18, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color);
         }
-        .brand-logo { height: 55px; width: auto; transition: var(--transition); }
-        .brand-logo:hover { transform: scale(1.05); }
+        .logo { font-size: 28px; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: -1px; }
+        .logo span { color: var(--accent-blue); }
+        nav { display: flex; gap: 40px; }
+        .nav-link { color: var(--text-secondary); text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; transition: var(--transition); }
+        .nav-link:hover { color: var(--text-primary); }
 
-        nav { display: flex; gap: 35px; align-items: center; }
-        .nav-item { position: relative; padding: 20px 0; }
-        .nav-link { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); display: flex; align-items: center; gap: 5px; }
-        .nav-link:hover, .nav-item:hover .nav-link { color: var(--child-green); }
-        .nav-arrow { font-size: 10px; transition: var(--transition); opacity: 0.6; }
-        .nav-item:hover .nav-arrow { transform: rotate(180deg); color: var(--child-green); }
-
-        .dropdown-menu { 
-            position: absolute; top: 100%; left: -20px; background: rgba(10, 20, 40, 0.95); backdrop-filter: blur(15px); min-width: 250px; border-radius: 12px; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6); padding: 15px; display: flex; flex-direction: column; 
-            opacity: 0; visibility: hidden; transform: translateY(15px); transition: var(--transition); border: 1px solid rgba(255,255,255,0.05);
-        }
-        .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-menu a { padding: 12px 20px; color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 14px; border-radius: 8px; transition: var(--transition); }
-        .dropdown-menu a:hover { background: rgba(255,255,255,0.05); color: var(--child-blue); padding-left: 30px; }
-
-        /* --- HERO --- */
-        .hero { 
-            height: 100vh; min-height: 700px; display: flex; align-items: center; padding: 0 5%; position: relative; overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 120%; z-index: -1;
-            background: linear-gradient(to right, rgba(5, 10, 20, 0.9) 0%, rgba(5, 10, 20, 0.5) 100%), url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1920&q=80') center/cover;
-        }
-        .hero-content { max-width: 900px; z-index: 2; position: relative; }
-        .hero-content h1 { 
-            font-size: 75px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px;
-            background: linear-gradient(to right, var(--child-green), var(--child-blue), var(--child-pink));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .typewriter-text { font-size: 22px; font-weight: 400; color: var(--text-muted); margin-bottom: 50px; min-height: 35px; }
+        /* --- HERO SECTION --- */
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; padding: 0 5%; z-index: 10; }
+        .hero-content { max-width: 800px; }
+        .hero h1 { font-size: 85px; line-height: 1.1; margin-bottom: 30px; font-weight: 400; }
+        .hero h1 i { color: var(--accent-blue); font-style: normal; }
+        .hero p { font-size: 20px; color: var(--text-secondary); margin-bottom: 50px; font-weight: 300; max-width: 600px; }
         
-        .magnetic-wrap { display: inline-block; padding: 20px; margin: -20px; }
-        .premium-btn { 
-            display: inline-flex; justify-content: center; align-items: center;
-            background: var(--child-blue); color: var(--text-main); font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; 
-            padding: 18px 45px; border-radius: 50px; text-decoration: none; border: none;
-            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4); transition: var(--transition);
+        .btn-magnetic { 
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-primary); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
+            transition: background 0.4s, color 0.4s; position: relative; overflow: hidden;
         }
-        .premium-btn:hover { background: var(--child-green); box-shadow: 0 15px 40px rgba(46, 204, 113, 0.6); transform: scale(1.05); }
+        .btn-magnetic::after { content: ''; position: absolute; width: 100%; height: 100%; background: var(--text-primary); border-radius: 50%; transform: scale(0); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); z-index: -1; }
+        .btn-magnetic:hover { color: var(--bg-color); border-color: transparent; }
+        .btn-magnetic:hover::after { transform: scale(1); }
 
-        /* --- TICKER --- */
-        .ticker-container { background: rgba(255,255,255,0.02); padding: 20px 0; overflow: hidden; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); position: relative; }
-        .ticker-track { display: inline-flex; width: max-content; animation: scrollTicker 30s linear infinite; }
-        .ticker-track:hover { animation-play-state: paused; }
-        @keyframes scrollTicker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
-        .ticker-item { display: inline-flex; align-items: center; gap: 15px; padding: 0 40px; font-size: 15px; color: var(--text-muted); }
-        .ticker-item img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--child-blue); object-fit: cover; }
-        .ticker-item strong { color: var(--gold); }
+        /* --- SECTIONS & CARDS --- */
+        section { padding: 150px 5%; position: relative; z-index: 10; }
+        .sec-subtitle { color: var(--accent-blue); text-transform: uppercase; letter-spacing: 4px; font-size: 13px; margin-bottom: 20px; display: block; }
+        .sec-title { font-size: 55px; margin-bottom: 60px; font-weight: 400; }
 
-        /* --- SECTIONS --- */
-        section { padding: 120px 5%; scroll-margin-top: 80px; position: relative; } 
-        .section-title { font-family: 'Cinzel', serif; font-size: 55px; font-weight: 600; margin-bottom: 20px; color: var(--gold); }
-        .section-subtitle { font-size: 16px; color: var(--child-orange); margin-bottom: 60px; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
-        
-        /* Colorful Card Borders */
-        .card:nth-child(1) { border-bottom: 5px solid var(--child-green); }
-        .card:nth-child(2) { border-bottom: 5px solid var(--child-orange); }
-        .card:nth-child(3) { border-bottom: 5px solid var(--child-pink); }
-
-        .card:hover { transform: translateY(-15px); background: rgba(255,255,255,0.03); }
-        .card img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.8s ease; opacity: 0.9; }
-        .card:hover img { transform: scale(1.05); opacity: 1; }
-        .card-body { padding: 40px; }
-        .card-body h3 { font-size: 24px; font-weight: 700; margin-bottom: 15px; color: var(--text-main); }
-        .card-body p { color: var(--text-muted); font-size: 15px; line-height: 1.8; }
-
-        /* --- CONTACT SECTION --- */
-        .contact-box { background: var(--card-bg); padding: 50px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 50px rgba(0,0,0,0.4); border-top: 5px solid var(--child-blue); }
-        .contact-box input, .contact-box textarea { width: 100%; padding: 18px; margin-bottom: 20px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-family: 'Nunito'; font-size: 15px; outline: none; transition: 0.3s; }
-        .contact-box input:focus, .contact-box textarea:focus { border-color: var(--child-blue); }
-
-        /* --- FOOTER --- */
-        footer { background: #020408; color: var(--text-main); padding: 100px 5% 40px 5%; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 60px; margin-bottom: 40px; }
-        .footer-col h3 { font-size: 15px; font-weight: 800; margin-bottom: 30px; color: var(--child-orange); text-transform: uppercase; letter-spacing: 2px; }
-        .footer-col a, .footer-col p { color: var(--text-muted); text-decoration: none; font-size: 15px; margin-bottom: 15px; display: block; transition: var(--transition); }
-        .footer-col a:hover { color: var(--child-green); transform: translateX(8px); }
-
-        /* --- WIDGETS --- */
-        .widget-btn { position: fixed; bottom: 40px; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: var(--transition); z-index: 9999; border: none; outline: none; }
-        .wa-btn { right: 40px; background: #25d366; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
-        .wa-btn svg { fill: var(--white); width: 35px; height: 35px; }
-        .wa-btn:hover { transform: scale(1.1); background: #20b858; }
-        
-        .chat-toggle { left: 40px; background: var(--card-bg); backdrop-filter: blur(10px); color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .chat-toggle svg { width: 30px; height: 30px; fill: currentColor; }
-        .chat-toggle:hover { background: var(--child-blue); color: white; border-color: var(--child-blue); transform: scale(1.1); }
-
-        /* CHATBOT */
-        .chat-window { position: fixed; bottom: 120px; left: 40px; width: 360px; background: rgba(5, 10, 20, 0.95); backdrop-filter: blur(20px); border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.6); display: flex; flex-direction: column; z-index: 9999; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.95); transition: var(--transition); overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-        .chat-window.open { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
-        .chat-head { padding: 20px; font-weight: 700; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white); background: rgba(0,0,0,0.4); }
-        .chat-close { cursor: pointer; opacity: 0.6; transition: 0.3s; font-size: 22px; line-height: 1; }
-        .chat-close:hover { opacity: 1; color: var(--child-pink); }
-        .chat-body { padding: 25px; height: 320px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; cursor: auto; background: rgba(0,0,0,0.2); }
-        .msg { padding: 12px 18px; border-radius: 15px; font-size: 14px; max-width: 85%; line-height: 1.5; animation: popIn 0.3s ease-out forwards; }
-        @keyframes popIn { 0% { opacity: 0; transform: scale(0.9) translateY(10px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
-        .msg-bot { background: rgba(255,255,255,0.05); color: var(--text-muted); align-self: flex-start; border: 1px solid rgba(255,255,255,0.05); border-bottom-left-radius: 4px; }
-        .msg-user { background: var(--child-blue); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; font-weight: 600; }
-        .chat-input { display: flex; padding: 15px; background: rgba(0,0,0,0.4); border-top: 1px solid rgba(255,255,255,0.05); cursor: auto; }
-        .chat-input input { flex: 1; padding: 12px 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; outline: none; font-family: 'Nunito'; font-size: 14px; background: rgba(0,0,0,0.5); color: var(--white); transition: 0.3s; }
-        .chat-input input:focus { border-color: var(--child-blue); }
-        .chat-input button { background: var(--child-blue); color: var(--white); border: none; width: 45px; height: 45px; border-radius: 50%; margin-left: 10px; cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center; }
-        .chat-input button:hover { background: var(--child-green); transform: scale(1.1); }
-    </style>
-</head>
-<body>
-
-    <div class="preloader" id="preloader">
-        <div class="preloader-text">CARE&CARE.</div>
-    </div>
-
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
-
-    <div class="scroll-progress" id="scroll-progress"></div>
-
-    <header>
-        <a href="#home">
-            <img src="logo.png" alt="Care & Care Logo" class="brand-logo" onerror="this.outerHTML='<h2 style=\'color:var(--child-blue); font-family:Montserrat; font-weight:800;\'>care&care.</h2>'">
-        </a>
-        <nav>
-            <div class="nav-item"><a href="#home" class="nav-link" style="color: var(--child-green);">Home</a></div>
-            <div class="nav-item">
-                <div class="nav-link">About Us <span class="nav-arrow">▼</span></div>
-                <div class="dropdown-menu"><a href="#our-story">Our Story</a><a href="#our-team">Our Team</a></div>
-            </div>
-            <div class="nav-item">
-                <div class="nav-link">NDIS Services <span class="nav-arrow">▼</span></div>
-                <div class="dropdown-menu"><a href="#ecei">Early Childhood (ECEI)</a><a href="#support-coordination">Support Coordination</a><a href="#daily-activities">Daily Activities</a></div>
-            </div>
-            <div class="nav-item">
-                <div class="nav-link">Plan Management <span class="nav-arrow">▼</span></div>
-                <div class="dropdown-menu"><a href="#plan-management">How it works</a><a href="#pricing">Pricing Structure</a></div>
-            </div>
-            <div class="nav-item"><a href="#contact" class="nav-link">Contact</a></div>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-bg" id="parallax-bg"></div>
-        <div class="hero-content">
-            <h1 class="fade-up">Nurturing Potential.<br>Empowering Lives.</h1>
-            <div class="typewriter-text" id="typewriter"></div>
-            
-            <div class="magnetic-wrap fade-up" style="transition-delay: 0.2s;">
-                <a href="#contact" class="premium-btn magnetic-btn">Book Consultation</a>
-            </div>
-        </div>
-    </section>
-
-    <div id="testimonials" class="ticker-container">
-        <div class="ticker-track">
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Review"><div><strong>ECEI support was incredible! ❤️</strong> — Parent, Sarah L.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Review"><div><strong>Amazing Plan Management. ❤️</strong> — Participant, David T.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Review"><div><strong>A truly life-changing partnership. ❤️</strong> — Parent, Emma R.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Review"><div><strong>ECEI support was incredible! ❤️</strong> — Parent, Sarah L.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Review"><div><strong>Amazing Plan Management. ❤️</strong> — Participant, David T.</div></div>
-            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Review"><div><strong>A truly life-changing partnership. ❤️</strong> — Parent, Emma R.</div></div>
-        </div>
-    </div>
-
-    <section id="our-story">
-        <div class="section-subtitle fade-up">Our Heritage</div>
-        <div class="section-title fade-up">Defining Care.</div>
-        <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; margin-top: 40px;" class="fade-up">
-            <div style="flex: 1; min-width: 300px;">
-                <p style="color: var(--text-muted); font-size: 18px; line-height: 1.8;">Care and Care started with a simple vision: to simplify the NDIS journey for families. We understood that navigating developmental delays and disability support can be overwhelming. Today, we stand as a premium provider, committed to delivering high-end, personalized care that genuinely transforms lives.</p>
-            </div>
-            <div style="flex: 1; min-width: 300px; position: relative;">
-                <div style="position:absolute; top:-20px; left:-20px; width:100px; height:100px; border-top:3px solid var(--child-blue); border-left:3px solid var(--child-blue); z-index:1; border-radius: 10px;"></div>
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); z-index:2; position:relative;" alt="Care and Care Story">
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-subtitle fade-up" style="color: var(--child-green);">Excellence</div>
-        <div class="section-title fade-up">Our Services.</div>
-        <div class="grid" style="margin-top: 40px;">
-            <div class="card fade-up" id="ecei">
-                <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="ECEI">
-                <div class="card-body">
-                    <h3>Early Childhood (ECEI)</h3>
-                    <p>We work closely with children aged 0-6 years who have developmental delays, building confidence through proven play-based strategies.</p>
-                </div>
-            </div>
-            <div class="card fade-up" id="support-coordination" style="transition-delay: 0.1s;">
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Support Coordination">
-                <div class="card-body">
-                    <h3>Support Coordination</h3>
-                    <p>Navigating the NDIS can be overwhelming. We help you understand your plan, connect with the right providers, and maximize funded supports.</p>
-                </div>
-            </div>
-            <div class="card fade-up" id="daily-activities" style="transition-delay: 0.2s;">
-                <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5fe5?auto=format&fit=crop&w=600&q=80" alt="Daily Tasks">
-                <div class="card-body">
-                    <h3>Daily Activities</h3>
-                    <p>Compassionate support to help you live independently. Our trained staff assist with everyday tasks in the comfort of your own home.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="plan-management" class="fade-up">
-        <div class="section-subtitle" style="color: var(--child-pink);">Financial Freedom</div>
-        <div class="section-title">Plan Management.</div>
-        <div style="background: var(--card-bg); padding: 60px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); margin-top: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
-            <h3 style="font-size: 28px; margin-bottom: 20px; color: var(--gold);">How It Works</h3>
-            <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 40px; max-width: 800px;">We act as your personal NDIS accountants. You choose the providers you want (registered or unregistered), and we handle the invoices, record-keeping, and portal claims.</p>
-            
-            <div id="pricing">
-                <h3 style="font-size: 28px; margin-bottom: 20px; color: var(--gold);">Pricing Structure</h3>
-                <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 20px;">Our fees are strictly in line with the latest NDIS Pricing Arrangements. There are no out-of-pocket expenses for you.</p>
-                <ul style="font-size: 15px; color: var(--text-muted); line-height: 2; margin-left: 20px;">
-                    <li>Set up costs covered by NDIS</li>
-                    <li>Monthly processing fees covered by NDIS</li>
-                    <li>Complete transparency through our dedicated portal</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="section-subtitle fade-up">Connect</div>
-        <div class="section-title fade-up">Reach Out.</div>
-        <div style="display: flex; gap: 60px; flex-wrap: wrap; margin-top: 40px;">
-            <div class="contact-box fade-up" style="flex: 1.5; min-width: 300px;">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <textarea rows="5" placeholder="How can we help?" required></textarea>
-                <button class="premium-btn magnetic-btn" style="width: 100%; border-radius: 10px; background: var(--child-blue); border: none;">Submit Request</button>
-            </div>
-            <div style="flex: 1; min-width: 300px; padding: 20px;" class="fade-up" style="transition-delay: 0.2s;">
-                <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--child-orange); margin-bottom: 15px;">Our Office</h3>
-                <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 50px;">Greenwood Business Park,<br>301 Burwood Hwy, Building 1,<br>Burwood VIC 3125</p>
-                <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--child-green); margin-bottom: 15px;">Direct Line</h3>
-                <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 50px;">0491 649 145</p>
-                <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--child-pink); margin-bottom: 15px;">Email</h3>
-                <p style="font-size: 18px; color: var(--text-muted);">Info@careandcare.com.au</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid fade-up">
-            <div class="footer-col" style="max-width: 300px;">
-                <h2 style="font-size:28px; margin-bottom:20px; font-family:'Montserrat', sans-serif; font-weight:800; color: var(--child-blue);">care&care.</h2>
-                <p style="font-size: 14px; line-height: 1.8;">Guiding you through the NDIS journey to achieve your goals together with absolute excellence.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Explore</h3>
-                <a href="#our-story">About Us</a>
-                <a href="#ecei">NDIS Services</a>
-                <a href="#plan-management">Plan Management</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h3>Legal</h3>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">NDIS Compliance</a>
-            </div>
-        </div>
-        <p style="text-align: center; opacity: 0.3; font-size: 12px; letter-spacing: 1px;">© 2026 CARE & CARE AUSTRALIA. DESIGNED FOR EXCELLENCE.</p>
-    </footer>
-
-    <a href="https://wa.me/61491649145" class="widget-btn wa-btn" target="_blank" title="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M20.52 3.44A11.96 11.96 0 0 0 12 0a12 12 0 0 0-10.27 18.2L0 24l5.97-1.56A11.95 11.95 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.22-3.48-8.56zM12 22a9.96 9.96 0 0 1-5.1-1.4l-.36-.22-3.8.99 1.01-3.7-.23-.37A9.95 9.95 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10zm5.46-7.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.88-.8-1.47-1.78-1.64-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.48 1.7.62.71.22 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35z"/></svg>
-    </a>
-
-    <button class="widget-btn chat-toggle" onclick="toggleChat()" title="Open Assistant">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-    </button>
-
-    <div class="chat-window" id="chatWindow">
-        <div class="chat-head">
-            Care & Care Assistant
-            <span class="chat-close" onclick="closeChat()">×</span>
-        </div>
-        <div class="chat-body" id="chatBody">
-            <div class="msg msg-bot">Hello. I am your Care & Care concierge. How may I assist you with your NDIS journey today?</div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMsg()">
-            <button onclick="sendMsg()">➤</button>
-        </div>
-    </div>
-
-    <script>
-        // 1. PRELOADER
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('preloader').classList.add('hidden');
-            }, 1000);
-        });
-
-        // 2. CUSTOM CURSOR
-        const cursorDot = document.getElementById('cursor-dot');
-        const cursorOutline = document.getElementById('cursor-outline');
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX; const posY = e.clientY;
-            cursorDot.style.left = `${posX}px`; cursorDot.style.top = `${posY}px`;
-            cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
-        });
-
-        const interactives = document.querySelectorAll('a, button, .magnetic-wrap, input, textarea, .nav-item');
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursorOutline.style.width = '60px'; cursorOutline.style.height = '60px';
-                cursorOutline.style.backgroundColor = 'rgba(52, 152, 219, 0.1)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursorOutline.style.width = '40px'; cursorOutline.style.height = '40px';
-                cursorOutline.style.backgroundColor = 'transparent';
-            });
-        });
-
-        // 3. MAGNETIC BUTTON
-        const magnetics = document.querySelectorAll('.magnetic-btn');
-        magnetics.forEach(btn => {
-            btn.parentElement.addEventListener('mousemove', (e) => {
-                const rect = btn.parentElement.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2; 
-                const y = e.clientY - rect.top - rect.height / 2;
-                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-            });
-            btn.parentElement.addEventListener('mouseleave', () => {
-                btn.style.transform = `translate(0px, 0px)`;
-            });
-        });
-
-        // 4. PARALLAX
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const bg = document.getElementById('parallax-bg');
-            if(bg) bg.style.transform = `translateY(${scrolled * 0.4}px)`;
-            
-            // Progress bar
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            document.getElementById('scroll-progress').style.width = (scrolled / height) * 100 + "%";
-        });
-
-        // 5. FADE ANIMATIONS
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
-
-        // 6. TYPEWRITER
-        const textToType = "Your trusted NDIS partner in Australia.";
-        let i = 0;
-        function typeWriter() {
-            if (i < textToType.length) {
-                document.getElementById("typewriter").innerHTML += textToType.charAt(i);
-                i++; setTimeout(typeWriter, 50);
-            }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { 
+            background: var(--surface-color); border: 1px solid var(--border-color); padding: 50px 40px; 
+            border-radius: 20px; backdrop-filter: blur(10px); transition: var(--transition); position: relative; overflow: hidden;
         }
-        setTimeout(typeWriter, 1500);
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.06), transparent 40%); opacity: 0; transition: opacity 0.3s; z-index: 0; pointer-events: none; }
+        .service-card:hover::before { opacity: 1; }
+        .service-card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.1); }
+        .card-icon { font-size: 40px; margin-bottom: 20px; display: block; position: relative; z-index: 1; }
+        .service-card h3 { font-size: 24px; margin-bottom: 15px; font-weight: 500; position: relative; z-index: 1; }
+        .service-card p { color: var(--text-secondary); font-size: 15px; position: relative; z-index: 1; }
 
-        // 7. CHATBOT
-        const popSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
-        popSound.volume = 0.5; 
-
-        setTimeout(() => {
-            const chatWin = document.getElementById('chatWindow');
-            if (!chatWin.classList.contains('open')) { toggleChat(); }
-        }, 4000);
-
-        function toggleChat() {
-            const chatWin = document.getElementById('chatWindow');
-            chatWin.classList.toggle('open');
-            if(chatWin.classList.contains('open')) {
-                popSound.currentTime = 0; popSound.play().catch(e=>{});
-            }
-        }
-        function closeChat() { document.getElementById('chatWindow').classList.remove('open'); }
-
-        const botDB = {
-            "hi": "Hello! Welcome to Care & Care. How can I assist you today?",
-            "services": "We offer Early Childhood Early Intervention (ECEI), Support Coordination, and Plan Management.",
-            "ecei": "ECEI stands for Early Childhood Early Intervention. It's designed for children aged 0-6 years.",
-            "cost": "Our fees strictly follow the NDIS Pricing Arrangements.",
-            "location": "We are located at Greenwood Business Park, 301 Burwood Hwy, Burwood VIC 3125.",
-            "contact": "You can call us directly at 0491 649 145.",
-            "default": "At Care & Care, we are a premium NDIS provider specializing in ECEI and Support Coordination. For specific queries, reach our experts at 0491 649 145!"
-        };
-
-        function sendMsg() {
-            let input = document.getElementById("chatInput");
-            let text = input.value.trim();
-            if(!text) return;
-            
-            let chatBody = document.getElementById("chatBody");
-            chatBody.innerHTML += `<div class="msg msg-user">${text}</div>`;
-            input.value = "";
-            chatBody.scrollTop = chatBody.scrollHeight;
-            
-            setTimeout(() => {
-                let reply = botDB["default"];
-                let textLower = text.toLowerCase();
-                for(let key in botDB) {
-                    if(textLower.includes(key) && key !== "default") { reply = botDB[key]; break; }
-                }
-                chatBody.innerHTML += `<div class="msg msg-bot">${reply}</div>`;
-                chatBody.scrollTop = chatBody.scrollHeight;
-                popSound.currentTime = 0; popSound.play().catch(e=>{});
-            }, 700);
-        }
-    </script>
-</body>
-</html>
+        /* --- ABOUT SPLIT --- */
+        .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-img { width: 100%; height: 600px; object-fit: cover; border-radius: 20px; filter: grayscale(30%); transition: var(--transition); }
+        .about-img:hover { filter: grayscale
