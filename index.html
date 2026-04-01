@@ -3,83 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care and Care | Smooth ECEI & NDIS Provider</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Care & Care | Premium NDIS Services</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ULTRA PREMIUM VARIABLES --- */
+        :root {
+            --brand-blue: #599fc4; /* Your Logo Color */
+            --dark-bg: #0a0a0a; /* Sleek Black */
+            --text-dark: #111111;
+            --text-gray: #666666;
+            --bg-light: #fcfcfc;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+
+        /* --- SLEEK GLASSMORPHISM HEADER --- */
+        header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000; 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);
+        }
+        .brand-logo { height: 50px; width: auto; }
+
+        /* --- PERFECTLY WORKING SMOOTH DROPDOWNS --- */
+        nav { display: flex; gap: 35px; align-items: center; }
+        .nav-item { position: relative; padding: 15px 0; }
+        .nav-link { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 15px; transition: var(--transition); display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        .nav-link:hover, .nav-item:hover .nav-link { color: var(--brand-blue); }
+        .nav-arrow { font-size: 10px; transition: var(--transition); }
+        .nav-item:hover .nav-arrow { transform: rotate(180deg); }
+
+        /* Animation Dropdown */
+        .dropdown-menu { 
+            position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); 
+            background: #fff; min-width: 240px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
+            padding: 10px; display: flex; flex-direction: column; 
+            opacity: 0; visibility: hidden; transition: var(--transition); border: 1px solid rgba(0,0,0,0.05);
+        }
+        .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { 
+            padding: 12px 20px; color: var(--text-gray); text-decoration: none; font-weight: 500; font-size: 14px; 
+            border-radius: 8px; transition: var(--transition); 
+        }
+        .dropdown-menu a:hover { background: #f5f7f9; color: var(--text-dark); padding-left: 25px; }
+
+        /* --- AIRTEL BLACK STYLE HERO --- */
+        .hero { 
+            height: 100vh; min-height: 700px; display: flex; align-items: center; padding: 0 5%;
+            background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #fff;
+        }
+        .hero-content { max-width: 800px; }
+        .hero-content h1 { font-size: 65px; font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 25px; }
+        .hero-content p { font-size: 20px; font-weight: 300; opacity: 0.9; margin-bottom: 40px; max-width: 600px; }
+        
+        /* Premium Button */
+        .premium-btn { 
+            display: inline-block; background: #fff; color: var(--text-dark); font-weight: 600; font-size: 16px; 
+            padding: 18px 45px; border-radius: 50px; text-decoration: none; transition: var(--transition); 
+            border: 1px solid transparent; 
+        }
+        .premium-btn:hover { background: var(--brand-blue); color: #fff; box-shadow: 0 15px 30px rgba(89, 159, 196, 0.4); transform: translateY(-3px); }
+
+        /* --- SLEEK RUNNING TICKER --- */
+        .ticker-container { background: #fff; border-bottom: 1px solid #eee; padding: 15px 0; overflow: hidden; display: flex; align-items: center; }
+        .ticker-track { display: flex; gap: 40px; animation: scrollTicker 40s linear infinite; }
+        .ticker-track:hover { animation-play-state: paused; }
+        @keyframes scrollTicker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .ticker-item { display: flex; align-items: center; gap: 15px; white-space: nowrap; font-size: 15px; font-weight: 500; color: var(--text-gray); }
+        .ticker-item img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .ticker-item strong { color: var(--text-dark); }
+
+        /* --- PREMIUM GRID --- */
+        .section { padding: 100px 5%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 40px; font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; }
+        .section-header p { color: var(--text-gray); font-size: 18px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .card { 
+            background: #fff; border-radius: 20px; overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition); cursor: pointer;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-body { padding: 40px 30px; }
+        .card-body h3 { font-size: 24px; font-weight: 600; margin-bottom: 15px; }
+        .card-body p { color: var(--text-gray); font-size: 15px; line-height: 1.7; }
+
+        /* --- DARK SLEEK FOOTER --- */
+        footer { background: var(--dark-bg); color: #fff; padding: 80px 5% 40px 5%; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 60px; }
+        .footer-col h3 { font-size: 18px; font-weight: 600; margin-bottom: 25px; color: #fff; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-col a, .footer-col p { color: #fff; opacity: 0.8; text-decoration: none; font-size: 16px; margin-bottom: 15px; display: block; transition: var(--transition); }
+        .footer-col a:hover { opacity: 1; color: var(--brand-blue); transform: translateX(5px); }
+
+        /* --- WIDGETS (WA & CHATBOT) --- */
+        .widget-btn { 
+            position: fixed; bottom: 30px; width: 65px; height: 65px; border-radius: 50%; 
+            display: flex; justify-content: center; align-items: center; cursor: pointer; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: var(--transition); z-index: 9999; border: none;
+        }
+        .wa-btn { right: 30px; background: #25d366; }
+        .chat-toggle { left: 30px; background: var(--text-dark); color: #fff; }
+        .widget-btn:hover { transform: scale(1.1) translateY(-5px); }
+
+        /* Sleek Chatbot Window */
+        .chat-window { 
+            position: fixed; bottom: 110px; left: 30px; width: 350px; background: #fff; 
+            border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            display: flex; flex-direction: column; z-index: 9999; 
+            opacity: 0; visibility: hidden; transform: translateY(20px); transition: var(--transition); 
+            border: 1px solid rgba(0,0,0,0.05); overflow: hidden;
+        }
+        .chat-window.open { opacity: 1; visibility: visible; transform: translateY(0); }
+        .chat-head { background: var(--text-dark); color: #fff; padding: 20px; font-weight: 600; display: flex; justify-content: space-between; }
+        .chat-close { cursor: pointer; opacity: 0.7; transition: 0.3s; }
+        .chat-close:hover { opacity: 1; }
+        .chat-body { padding: 20px; height: 300px; overflow-y: auto; background: #fafafa; display: flex; flex-direction: column; gap: 15px; }
+        .msg { padding: 12px 18px; border-radius: 12px; font-size: 14px; max-width: 85%; line-height: 1.5; }
+        .msg-bot { background: #fff; color: var(--text-dark); align-self: flex-start; border: 1px solid #eee; border-bottom-left-radius: 4px; }
+        .msg-user { background: var(--text-dark); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+        .chat-input { display: flex; padding: 15px; background: #fff; border-top: 1px solid #eee; }
+        .chat-input input { flex: 1; padding: 12px 20px; border: 1px solid #eee; border-radius: 50px; outline: none; font-family: 'Inter'; font-size: 14px; background: #fafafa; }
+        .chat-input button { background: var(--brand-blue); color: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; margin-left: 10px; cursor: pointer; transition: 0.3s; }
+        .chat-input button:hover { background: var(--text-dark); }
+
+    </style>
 </head>
 <body>
 
     <header>
         <a href="index.html">
-            <img src="logo.png" alt="Care and Care Logo" class="brand-logo" onerror="this.outerHTML='<h2 style=\'color:#599fc4; font-family:Montserrat;\'>Care & Care</h2>'">
+            <img src="logo.png" alt="Care & Care" class="brand-logo" onerror="this.outerHTML='<h2 style=\'color:#599fc4; font-weight:800; letter-spacing:-1px;\'>care&care</h2>'">
         </a>
         
         <nav>
-            <div class="nav-item"><a href="index.html" class="nav-link active">Home</a></div>
+            <div class="nav-item"><a href="index.html" class="nav-link" style="color: var(--brand-blue);">Home</a></div>
+            
             <div class="nav-item">
-                <span class="nav-link">About Us <span class="drop-arrow">▼</span></span>
-                <div class="dropdown-menu"><a href="#">Our Story</a><a href="#">Our Team</a></div>
+                <div class="nav-link">About Us <span class="nav-arrow">▼</span></div>
+                <div class="dropdown-menu">
+                    <a href="#">Our Story</a>
+                    <a href="#">Our Team</a>
+                    <a href="#">Careers</a>
+                </div>
             </div>
+
             <div class="nav-item">
-                <span class="nav-link">NDIS Services <span class="drop-arrow">▼</span></span>
-                <div class="dropdown-menu"><a href="services.html#ecei">Early Childhood (ECEI)</a><a href="services.html#support">Support Coordination</a><a href="services.html#daily">Daily Activities</a></div>
+                <div class="nav-link">NDIS Services <span class="nav-arrow">▼</span></div>
+                <div class="dropdown-menu">
+                    <a href="#">Early Childhood (ECEI)</a>
+                    <a href="#">Support Coordination</a>
+                    <a href="#">Daily Personal Activities</a>
+                </div>
             </div>
+
             <div class="nav-item">
-                <span class="nav-link">Plan Management <span class="drop-arrow">▼</span></span>
-                <div class="dropdown-menu"><a href="#">How it works</a><a href="#">Pricing</a></div>
+                <div class="nav-link">Plan Management <span class="nav-arrow">▼</span></div>
+                <div class="dropdown-menu">
+                    <a href="#">How it works</a>
+                    <a href="#">Pricing Structure</a>
+                </div>
             </div>
+
             <div class="nav-item"><a href="#" class="nav-link">Testimonials</a></div>
-            <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            <div class="nav-item"><a href="#" class="nav-link">Contact</a></div>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Nurturing Potential, Empowering Lives</h1>
-        <p>Your trusted NDIS partner specializing in Early Childhood Early Intervention (ECEI) and personalized care across Australia.</p>
-        <a href="contact.html" class="gold-btn">Book a Free Consultation</a>
+        <div class="hero-content">
+            <h1>Nurturing Potential.<br>Empowering Lives.</h1>
+            <p>Your trusted NDIS partner specializing in Early Childhood Early Intervention and personalized care across Australia.</p>
+            <a href="#" class="premium-btn">Book a Free Consultation</a>
+        </div>
+    </section>
 
-        <div class="ticker-wrapper">
-            <div class="ticker-track">
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div class="ticker-text"><strong>ECEI support was incredible! ❤️</strong><br><span>Parent - Sarah L.</span></div></div>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div class="ticker-text"><strong>Amazing Plan Management. ❤️</strong><br><span>Participant - David T.</span></div></div>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="pic"><div class="ticker-text"><strong>A truly life-changing partnership. ❤️</strong><br><span>Parent - Emma R.</span></div></div>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div class="ticker-text"><strong>ECEI support was incredible! ❤️</strong><br><span>Parent - Sarah L.</span></div></div>
-                <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div class="ticker-text"><strong>Amazing Plan Management. ❤️</strong><br><span>Participant - David T.</span></div></div>
+    <div class="ticker-container">
+        <div class="ticker-track">
+            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div><strong>ECEI support was incredible! ❤️</strong> — Parent, Sarah L.</div></div>
+            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div><strong>Amazing Plan Management. ❤️</strong> — Participant, David T.</div></div>
+            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="pic"><div><strong>A truly life-changing partnership. ❤️</strong> — Parent, Emma R.</div></div>
+            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="pic"><div><strong>ECEI support was incredible! ❤️</strong> — Parent, Sarah L.</div></div>
+            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="pic"><div><strong>Amazing Plan Management. ❤️</strong> — Participant, David T.</div></div>
+            <div class="ticker-item"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="pic"><div><strong>A truly life-changing partnership. ❤️</strong> — Parent, Emma R.</div></div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Our Core Services</h2>
+            <p>Simplifying the NDIS journey for you and your family.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="ECEI">
+                <div class="card-body">
+                    <h3>Early Childhood (ECEI)</h3>
+                    <p>We work closely with children aged 0-6 years who have developmental delays, building confidence through proven play-based strategies.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Support">
+                <div class="card-body">
+                    <h3>Support Coordination</h3>
+                    <p>Navigating the NDIS can be overwhelming. We help you understand your plan, connect with the right providers, and maximize funded supports.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5fe5?auto=format&fit=crop&w=600&q=80" alt="Daily Tasks">
+                <div class="card-body">
+                    <h3>Assistance with Daily Life</h3>
+                    <p>Compassionate support to help you live independently. Our trained staff assist with everyday tasks in the comfort of your own home.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/61491649145" class="wa-float" target="_blank"><svg viewBox="0 0 24 24"><path d="M20.52 3.44A11.96 11.96 0 0 0 12 0a12 12 0 0 0-10.27 18.2L0 24l5.97-1.56A11.95 11.95 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.22-3.48-8.56zM12 22a9.96 9.96 0 0 1-5.1-1.4l-.36-.22-3.8.99 1.01-3.7-.23-.37A9.95 9.95 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10zm5.46-7.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.88-.8-1.47-1.78-1.64-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.48 1.7.62.71.22 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35z"/></svg></a>
-    
-    <button class="chat-toggle" onclick="toggleChat()"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-    <div class="chat-window" id="chatWindow">
-        <div class="chat-header">Care & Care Support <span onclick="toggleChat()">×</span></div>
-        <div class="chat-body" id="chatBody"><div class="msg-bot">Hi! 👋 I'm your Care & Care assistant. Ask me anything about our services.</div></div>
-        <div class="chat-input"><input type="text" id="chatInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()">➤</button></div>
-    </div>
-
     <footer>
         <div class="footer-grid">
-            <div class="footer-col">
-                <img src="logo.png" alt="Logo" style="height:50px; margin-bottom:15px; filter: brightness(0) invert(1);" onerror="this.outerHTML='<h2 style=\'color:white; font-family:Montserrat;\'>Care & Care</h2>'">
-                <p>For updated news & events, subscribe to our newsletter today!</p>
+            <div class="footer-col" style="max-width: 300px;">
+                <img src="logo.png" alt="Logo" style="height:45px; margin-bottom: 20px; filter: grayscale(1) brightness(2);" onerror="this.outerHTML='<h2 style=\'font-size:30px; margin-bottom:20px;\'>Care&Care</h2>'">
+                <p style="font-size: 14px; opacity: 0.6; line-height: 1.6;">Let us guide you through the NDIS journey to achieve your goals together.</p>
             </div>
-            <div class="footer-col"><h3>Quick Links</h3><a href="index.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
-            <div class="footer-col"><h3>Contact Us</h3><p>Greenwood Business Park,<br>301 Burwood Hwy, Burwood VIC 3125</p><p>Tel: 0491 649 145</p></div>
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <a href="#">About Us</a>
+                <a href="#">NDIS Services</a>
+                <a href="#">Plan Management</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Greenwood Business Park, 301 Burwood Hwy, Burwood VIC 3125</p>
+                <p>0491 649 145</p>
+                <p>Info@careandcare.com.au</p>
+            </div>
         </div>
-        <p style="text-align: center; color: #888; font-size: 14px;">© 2026 by Care & Care. Designed by PAGEFOURDESIGN</p>
+        <p style="text-align: center; opacity: 0.4; font-size: 14px;">© 2026 Care & Care Australia. Designed for excellence.</p>
     </footer>
 
+    <a href="https://wa.me/61491649145" class="widget-btn wa-btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="white" width="35" height="35"><path d="M20.52 3.44A11.96 11.96 0 0 0 12 0a12 12 0 0 0-10.27 18.2L0 24l5.97-1.56A11.95 11.95 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.22-3.48-8.56zM12 22a9.96 9.96 0 0 1-5.1-1.4l-.36-.22-3.8.99 1.01-3.7-.23-.37A9.95 9.95 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10zm5.46-7.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.88-.8-1.47-1.78-1.64-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.48 1.7.62.71.22 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35z"/></svg>
+    </a>
+
+    <button class="widget-btn chat-toggle" onclick="document.getElementById('chatWindow').classList.toggle('open')">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </button>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-head">
+            Care & Care Support
+            <span class="chat-close" onclick="document.getElementById('chatWindow').classList.remove('open')">×</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="msg msg-bot">Hi there! 👋 I'm your Care & Care virtual assistant. How can I help you?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMsg()">
+            <button onclick="sendMsg()">➤</button>
+        </div>
+    </div>
+
     <script>
-        function toggleChat() { document.getElementById("chatWindow").style.display = document.getElementById("chatWindow").style.display === "flex" ? "none" : "flex"; }
         function sendMsg() {
             let input = document.getElementById("chatInput");
-            if(!input.value) return;
+            let text = input.value.trim();
+            if(!text) return;
+            
             let chatBody = document.getElementById("chatBody");
-            chatBody.innerHTML += `<div class="msg-user">${input.value}</div>`;
+            chatBody.innerHTML += `<div class="msg msg-user">${text}</div>`;
             input.value = "";
             chatBody.scrollTop = chatBody.scrollHeight;
+            
             setTimeout(() => {
-                chatBody.innerHTML += `<div class="msg-bot">Thanks for reaching out! Please contact us at 0491 649 145 or via WhatsApp for quick support.</div>`;
+                chatBody.innerHTML += `<div class="msg msg-bot">Thanks for reaching out! Please contact us at 0491 649 145 or via WhatsApp for detailed support.</div>`;
                 chatBody.scrollTop = chatBody.scrollHeight;
             }, 800);
         }
