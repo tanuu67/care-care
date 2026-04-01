@@ -22,7 +22,27 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); overflow-x: hidden; line-height: 1.6; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--white); 
+            color: var(--black); 
+            overflow-x: hidden; 
+            line-height: 1.6; 
+            /* Makes fonts look sharper and premium like Apple devices */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- SMOOTH FLOATING ANIMATIONS --- */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* HEADER */
         header { 
@@ -61,20 +81,11 @@
         .premium-btn:hover { background: var(--brand-blue); color: var(--white); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(89, 159, 196, 0.4); }
 
         /* FIXED RUNNING TESTIMONIALS */
-        .ticker-container { 
-            background: var(--white); padding: 25px 0; overflow: hidden; width: 100%; border-bottom: 1px solid #eee; position: relative;
-        }
-        .ticker-track { 
-            display: inline-flex; width: max-content; animation: scrollTicker 30s linear infinite; 
-        }
+        .ticker-container { background: var(--white); padding: 25px 0; overflow: hidden; width: 100%; border-bottom: 1px solid #eee; position: relative; }
+        .ticker-track { display: inline-flex; width: max-content; animation: scrollTicker 30s linear infinite; }
         .ticker-track:hover { animation-play-state: paused; }
-        @keyframes scrollTicker { 
-            0% { transform: translate3d(0, 0, 0); } 
-            100% { transform: translate3d(-50%, 0, 0); } 
-        }
-        .ticker-item { 
-            display: inline-flex; align-items: center; gap: 15px; padding: 0 40px; font-size: 16px; font-weight: 500; color: var(--text-muted); 
-        }
+        @keyframes scrollTicker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
+        .ticker-item { display: inline-flex; align-items: center; gap: 15px; padding: 0 40px; font-size: 16px; font-weight: 500; color: var(--text-muted); }
         .ticker-item img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
         .ticker-item strong { color: var(--black); }
 
@@ -88,7 +99,8 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); color: var(--black); }
         .card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 280px; object-fit: cover; }
+        .card img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.8s ease; }
+        .card:hover img { transform: scale(1.05); }
         .card-body { padding: 40px; }
         .card-body h3 { font-size: 26px; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
 
@@ -100,7 +112,7 @@
         .footer-col a:hover { opacity: 1; color: var(--brand-blue); padding-left: 5px; }
 
         /* CHATBOT & WA WIDGETS */
-        .widget-btn { position: fixed; bottom: 30px; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: var(--transition); z-index: 9999; border: none; }
+        .widget-btn { position: fixed; bottom: 30px; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: var(--transition); z-index: 9999; border: none; outline: none; }
         .wa-btn { right: 30px; background: #25d366; }
         .chat-toggle { left: 30px; background: var(--black); color: var(--white); }
         .widget-btn:hover { transform: scale(1.1); }
@@ -111,12 +123,14 @@
         .chat-close { cursor: pointer; opacity: 0.7; transition: 0.3s; }
         .chat-close:hover { opacity: 1; }
         .chat-body { padding: 20px; height: 350px; overflow-y: auto; background: var(--light-gray); display: flex; flex-direction: column; gap: 15px; }
-        .msg { padding: 12px 18px; border-radius: 12px; font-size: 14px; max-width: 85%; line-height: 1.5; }
+        .msg { padding: 12px 18px; border-radius: 12px; font-size: 14px; max-width: 85%; line-height: 1.5; animation: popIn 0.3s ease-out forwards; }
+        @keyframes popIn { 0% { opacity: 0; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
         .msg-bot { background: var(--white); color: var(--black); align-self: flex-start; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .msg-user { background: var(--black); color: var(--white); align-self: flex-end; }
         .chat-input { display: flex; padding: 15px; background: var(--white); border-top: 1px solid #eee; }
         .chat-input input { flex: 1; padding: 12px 20px; border: 1px solid #ddd; border-radius: 50px; outline: none; font-family: 'Inter'; font-size: 14px; background: var(--light-gray); }
-        .chat-input button { background: var(--brand-blue); color: var(--white); border: none; width: 45px; height: 45px; border-radius: 50%; margin-left: 10px; cursor: pointer; }
+        .chat-input button { background: var(--brand-blue); color: var(--white); border: none; width: 45px; height: 45px; border-radius: 50%; margin-left: 10px; cursor: pointer; transition: 0.3s; }
+        .chat-input button:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -125,30 +139,19 @@
         <a href="#home">
             <img src="logo.png" alt="Care & Care" class="brand-logo" onerror="this.outerHTML='<h2 style=\'color:#000; font-weight:900; letter-spacing:-2px;\'>CARE&CARE.</h2>'">
         </a>
-        
         <nav>
             <div class="nav-item"><a href="#home" class="nav-link" style="color: var(--brand-blue);">Home</a></div>
             <div class="nav-item">
                 <div class="nav-link">About Us <span class="nav-arrow">▼</span></div>
-                <div class="dropdown-menu">
-                    <a href="#our-story">Our Story</a>
-                    <a href="#our-team">Our Team</a>
-                </div>
+                <div class="dropdown-menu"><a href="#our-story">Our Story</a><a href="#our-team">Our Team</a></div>
             </div>
             <div class="nav-item">
                 <div class="nav-link">NDIS Services <span class="nav-arrow">▼</span></div>
-                <div class="dropdown-menu">
-                    <a href="#ecei">Early Childhood (ECEI)</a>
-                    <a href="#support-coordination">Support Coordination</a>
-                    <a href="#daily-activities">Daily Activities</a>
-                </div>
+                <div class="dropdown-menu"><a href="#ecei">Early Childhood (ECEI)</a><a href="#support-coordination">Support Coordination</a><a href="#daily-activities">Daily Activities</a></div>
             </div>
             <div class="nav-item">
                 <div class="nav-link">Plan Management <span class="nav-arrow">▼</span></div>
-                <div class="dropdown-menu">
-                    <a href="#plan-management">How it works</a>
-                    <a href="#pricing">Pricing Structure</a>
-                </div>
+                <div class="dropdown-menu"><a href="#plan-management">How it works</a><a href="#pricing">Pricing Structure</a></div>
             </div>
             <div class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></div>
             <div class="nav-item"><a href="#contact" class="nav-link">Contact</a></div>
@@ -156,7 +159,7 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="hero-content">
+        <div class="hero-content fade-up">
             <h1>Nurturing Potential.<br>Empowering Lives.</h1>
             <p>Your trusted NDIS partner specializing in Early Childhood Early Intervention and premium personalized care.</p>
             <a href="#contact" class="premium-btn">Book Consultation</a>
@@ -178,9 +181,9 @@
     </div>
 
     <section id="our-story" class="section">
-        <div class="section-title">Our Story.</div>
-        <div class="section-subtitle">A journey of compassion and dedication towards building a better tomorrow for children and participants.</div>
-        <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+        <div class="section-title fade-up">Our Story.</div>
+        <div class="section-subtitle fade-up">A journey of compassion and dedication towards building a better tomorrow for children and participants.</div>
+        <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;" class="fade-up">
             <div style="flex: 1; min-width: 300px;">
                 <p style="color: var(--text-muted); font-size: 18px; line-height: 1.8;">Care and Care started with a simple vision: to simplify the NDIS journey for families. We understood that navigating developmental delays and disability support can be overwhelming. Today, we stand as a premium provider, committed to delivering high-end, personalized care that genuinely transforms lives.</p>
             </div>
@@ -191,24 +194,24 @@
     </section>
 
     <section class="section section-dark">
-        <div class="section-title" style="color: var(--white);">Our Services.</div>
-        <div class="section-subtitle" style="color: var(--text-muted);">High-end support designed to empower you.</div>
+        <div class="section-title fade-up" style="color: var(--white);">Our Services.</div>
+        <div class="section-subtitle fade-up" style="color: var(--text-muted);">High-end support designed to empower you.</div>
         <div class="grid">
-            <div class="card" id="ecei">
+            <div class="card fade-up" id="ecei">
                 <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="ECEI">
                 <div class="card-body">
                     <h3>Early Childhood (ECEI)</h3>
                     <p>We work closely with children aged 0-6 years who have developmental delays, building confidence through proven play-based strategies.</p>
                 </div>
             </div>
-            <div class="card" id="support-coordination">
+            <div class="card fade-up" id="support-coordination" style="transition-delay: 0.1s;">
                 <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Support">
                 <div class="card-body">
                     <h3>Support Coordination</h3>
                     <p>Navigating the NDIS can be overwhelming. We help you understand your plan, connect with the right providers, and maximize funded supports.</p>
                 </div>
             </div>
-            <div class="card" id="daily-activities">
+            <div class="card fade-up" id="daily-activities" style="transition-delay: 0.2s;">
                 <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5fe5?auto=format&fit=crop&w=600&q=80" alt="Daily Tasks">
                 <div class="card-body">
                     <h3>Daily Activities</h3>
@@ -218,7 +221,7 @@
         </div>
     </section>
 
-    <section id="plan-management" class="section">
+    <section id="plan-management" class="section fade-up">
         <div class="section-title">Plan Management.</div>
         <div class="section-subtitle">Total financial control, without the administrative headache.</div>
         <div style="background: var(--black); color: var(--white); padding: 60px; border-radius: 20px;">
@@ -237,7 +240,7 @@
         </div>
     </section>
 
-    <section id="contact" class="section section-light">
+    <section id="contact" class="section section-light fade-up">
         <div class="section-title">Contact Us.</div>
         <div class="section-subtitle">Ready to start your journey? We are here to listen.</div>
         <div style="display: flex; gap: 40px; flex-wrap: wrap;">
@@ -259,7 +262,7 @@
     </section>
 
     <footer>
-        <div class="footer-grid">
+        <div class="footer-grid fade-up">
             <div class="footer-col" style="max-width: 300px;">
                 <h2 style="font-size:30px; margin-bottom:20px; font-weight:900; letter-spacing:-2px;">CARE&CARE.</h2>
                 <p style="font-size: 14px; opacity: 0.6; line-height: 1.6;">Let us guide you through the NDIS journey to achieve your goals together.</p>
@@ -285,14 +288,14 @@
         <svg viewBox="0 0 24 24" fill="white" width="35" height="35"><path d="M20.52 3.44A11.96 11.96 0 0 0 12 0a12 12 0 0 0-10.27 18.2L0 24l5.97-1.56A11.95 11.95 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.22-3.48-8.56zM12 22a9.96 9.96 0 0 1-5.1-1.4l-.36-.22-3.8.99 1.01-3.7-.23-.37A9.95 9.95 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10z"/></svg>
     </a>
 
-    <button class="widget-btn chat-toggle" onclick="document.getElementById('chatWindow').classList.toggle('open')">
+    <button class="widget-btn chat-toggle" onclick="toggleChat()">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
     </button>
 
     <div class="chat-window" id="chatWindow">
         <div class="chat-head">
             Care & Care Assistant
-            <span class="chat-close" onclick="document.getElementById('chatWindow').classList.remove('open')">×</span>
+            <span class="chat-close" onclick="toggleChat()">×</span>
         </div>
         <div class="chat-body" id="chatBody">
             <div class="msg msg-bot">Hello! 👋 Welcome to Care & Care. You can ask me about our services, timings, location, pricing, or NDIS!</div>
@@ -304,59 +307,52 @@
     </div>
 
     <script>
-        // Massive Bot Knowledge Base
+        // 1. SCROLL FADE-UP ANIMATION OBSERVER
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        // 2. CHATBOT OPEN SOUND & TOGGLE
+        // High quality pop sound from public assets
+        const popSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
+        popSound.volume = 0.5; // Set volume to 50% so it's pleasant
+
+        function toggleChat() {
+            const chatWin = document.getElementById('chatWindow');
+            chatWin.classList.toggle('open');
+            
+            // Play sound if window is opening
+            if(chatWin.classList.contains('open')) {
+                popSound.currentTime = 0; // Reset audio to start
+                popSound.play().catch(e => console.log("Sound autoplay blocked by browser"));
+            }
+        }
+
+        // 3. CHATBOT LOGIC
         const botDB = {
-            // Greetings
             "hi": "Hello! Welcome to Care & Care. How can I assist you today?",
             "hello": "Hi there! I'm your Care & Care assistant. What would you like to know?",
             "hey": "Hello! How can we help you and your family?",
-            
-            // Services General
-            "services": "We offer Early Childhood Early Intervention (ECEI), Support Coordination, and Plan Management. Which one would you like to know about?",
-            "what do you do": "We are a registered NDIS provider helping families with ECEI, Support Coordination, and Plan Management.",
-            
-            // ECEI Specific
-            "ecei": "ECEI stands for Early Childhood Early Intervention. It's designed for children aged 0-6 years with developmental delays to help them achieve their milestones.",
-            "early childhood": "Our Early Childhood program supports children under 7 with personalized, play-based therapies.",
-            "child": "We specialize in early childhood support (ECEI) to give your child the best start in life.",
-            
-            // Support Coordination Specific
-            "support coordination": "Our Support Coordinators help you understand your NDIS plan, connect with local therapists, and maximize your funding.",
-            "coordinator": "We have expert Support Coordinators to guide you through your NDIS journey step-by-step.",
-            
-            // Plan Management Specific
-            "plan management": "Plan Management means we act as your NDIS accountants. We pay your provider invoices and handle portal claims so you don't have to worry.",
-            "manage plan": "We can manage your NDIS plan funding, ensuring providers are paid on time while you track it all transparently.",
-            "invoice": "If you are with our Plan Management team, we handle all your invoices directly with the NDIS.",
-
-            // Cost & Pricing
-            "cost": "Our fees strictly follow the NDIS Pricing Arrangements. There are no out-of-pocket expenses for you if funded by NDIS.",
-            "price": "We charge according to standard NDIS guidelines, meaning your NDIS plan covers our service costs.",
-            "free": "Initial consultations are completely free! Service costs are covered by your NDIS plan.",
-            "fee": "All our fees are regulated by the NDIS pricing guidelines.",
-
-            // Location & Contact
+            "services": "We offer Early Childhood Early Intervention (ECEI), Support Coordination, and Plan Management.",
+            "ecei": "ECEI stands for Early Childhood Early Intervention. It's designed for children aged 0-6 years.",
+            "support coordination": "Our Support Coordinators help you understand your NDIS plan and connect with local therapists.",
+            "plan management": "Plan Management means we act as your NDIS accountants. We pay your provider invoices.",
+            "cost": "Our fees strictly follow the NDIS Pricing Arrangements. There are no out-of-pocket expenses.",
             "location": "We are located at Greenwood Business Park, 301 Burwood Hwy, Burwood VIC 3125.",
-            "address": "Our office is at 301 Burwood Hwy, Building 1, Burwood VIC 3125.",
-            "where": "We are based in Burwood, VIC, but offer services across the region.",
             "contact": "You can call us directly at 0491 649 145 or email Info@careandcare.com.au.",
-            "phone": "Our contact number is 0491 649 145. Feel free to call us!",
-            "number": "Please call our team at 0491 649 145.",
-            "email": "You can reach us anytime at Info@careandcare.com.au.",
-            
-            // Hours
             "hours": "We are open Monday to Friday, from 9 AM to 5 PM AEST.",
-            "time": "Our operating hours are 9 AM - 5 PM, Monday through Friday.",
-            "open": "We are open weekdays from 9am to 5pm.",
-            "weekend": "We are closed on Saturdays and Sundays, but you can leave us a message!",
-
-            // Referrals
-            "refer": "To make a referral, please visit the Contact section on our website and fill out the form.",
-            "apply": "You can start by booking a free consultation through our website or calling our team.",
-            "book": "You can book an appointment by filling out the Contact form or calling 0491 649 145.",
-
-            // Default Fallback
-            "default": "I'm still learning! For detailed support, please contact our team at 0491 649 145 or click the WhatsApp button."
+            "refer": "To make a referral, please visit the Contact section and fill out the form.",
+            "default": "At Care & Care, we are a premium NDIS provider specializing in ECEI, Support Coordination, and Plan Management. If you have a specific query, you can also reach our experts at 0491 649 145!"
         };
 
         function sendMsg() {
@@ -365,27 +361,22 @@
             if(!text) return;
             
             let chatBody = document.getElementById("chatBody");
-            
-            // Add User Message
             chatBody.innerHTML += `<div class="msg msg-user">${text}</div>`;
             input.value = "";
             chatBody.scrollTop = chatBody.scrollHeight;
             
-            // Add Bot Response
             setTimeout(() => {
                 let reply = botDB["default"];
                 let textLower = text.toLowerCase();
-                
-                // Match keywords
                 for(let key in botDB) {
-                    if(textLower.includes(key) && key !== "default") { 
-                        reply = botDB[key]; 
-                        break; 
-                    }
+                    if(textLower.includes(key) && key !== "default") { reply = botDB[key]; break; }
                 }
-
                 chatBody.innerHTML += `<div class="msg msg-bot">${reply}</div>`;
                 chatBody.scrollTop = chatBody.scrollHeight;
+                
+                // Optional: Play sound when bot replies
+                popSound.currentTime = 0;
+                popSound.play().catch(e => {});
             }, 700);
         }
     </script>
