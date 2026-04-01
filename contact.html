@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="access-bar">
         <span>Text Size:</span>
         <button onclick="changeTextSize(1)">A+</button>
@@ -25,8 +24,8 @@
     </header>
 
     <div class="container" style="max-width: 650px;">
-        <h1 style="text-align: center; color: #002b5e; margin-bottom: 10px;">Make a Referral</h1>
-        <p style="text-align: center; margin-bottom: 30px;">Please fill out the form below. Our team will get back to you within 24 hours.</p>
+        <h1 class="section-title" style="margin-bottom: 10px;">Make a Referral / Contact Us</h1>
+        <p style="text-align: center; margin-bottom: 40px; font-size: 18px; color: var(--text-light);">Call us at 0491 649 145 or fill out the form below. Our team will get back to you soon.</p>
 
         <form action="#" method="POST">
             <label><strong>Full Name</strong></label>
@@ -43,29 +42,53 @@
                 <option value="ecei">Early Childhood Early Intervention (ECEI)</option>
                 <option value="support-coordination">Support Coordination</option>
                 <option value="daily-activities">Daily Personal Activities</option>
-                <option value="other">Other</option>
             </select>
 
             <label><strong>Message / Additional Details</strong></label>
             <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
 
-            <button type="submit" class="btn" style="width: 100%; font-size: 18px;">Submit Referral</button>
+            <button type="submit" class="btn" style="width: 100%; font-size: 18px;">Submit Message</button>
         </form>
     </div>
 
     <footer>
-        <p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h2 style="color: var(--primary-color); margin-bottom: 15px; font-family: 'Poppins', sans-serif;">Care and Care</h2>
+                <p>For updated news & events, subscribe to our newsletter today!</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="index.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html">Make a Referral</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><strong>Address:</strong><br>Greenwood Business Park,<br>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p>
+                <p><strong>Tel:</strong> <a href="tel:0491649145" style="display:inline; color:var(--secondary-color);">0491 649 145</a></p>
+                <p><strong>Email:</strong> <a href="mailto:Info@careandcare.com.au" style="display:inline; color:var(--secondary-color);">Info@careandcare.com.au</a></p>
+            </div>
+            <div class="footer-col">
+                <h3>Operating Hours</h3>
+                <p><strong>Monday to Friday:</strong><br>9am - 5pm AEST</p>
+            </div>
+        </div>
+        <div class="copyright"><p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p></div>
     </footer>
 
-    <a href="https://wa.me/61XXXXXXXXX" class="whatsapp-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
-
-    <button class="chat-toggle-btn" onclick="toggleChat()">💬</button>
-    <div class="chat-window" id="chatWindow">
-        <div class="chat-header">Care & Care Support<span class="close-chat" onclick="toggleChat()">×</span></div>
-        <div class="chat-messages" id="chatMessages"><div class="msg-bubble bot-msg">Hello! Need help filling out the referral form?</div></div>
-        <div class="chat-input-area"><input type="text" id="userInput" placeholder="Ask a question..." onkeypress="handleKeyPress(event)"><button onclick="sendMessage()">➤</button></div>
+    <a href="https://wa.me/61491649145" class="wa-btn" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+    <button class="chat-toggle" onclick="toggleChat()">💬</button>
+    <div class="chat-box" id="aiChat">
+        <div class="chat-head">Care & Care Support <span class="chat-close" onclick="toggleChat()">×</span></div>
+        <div class="chat-msgs" id="chatMsgs"><div><div class="msg-bot">Hello! Need help filling out the referral form?</div></div></div>
+        <div class="chat-input"><input type="text" id="chatVal" placeholder="Ask a question..." onkeypress="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()">➤</button></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
