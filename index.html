@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care and Care | NDIS & ECEI</title>
+    <title>Care and Care | Premium NDIS & ECEI</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; background: #fff; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; background: #f9fbfd; color: #333; }
 
         /* --- Header / Navbar --- */
         header {
@@ -48,4 +48,387 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text
+            text-align: center;
+            /* Added solid background color as fallback */
+            background-color: #205c54; 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1587691592099-24045742c181?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 400;
+            max-width: 700px;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+            line-height: 1.5;
+            color: white;
+        }
+
+        /* --- Golden Gradient Button --- */
+        .gold-btn {
+            background: linear-gradient(to bottom, #fde48f, #cf9e38);
+            color: #000;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3), 0 0 20px rgba(207, 158, 56, 0.5);
+            transition: all 0.3s;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .gold-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 30px rgba(207, 158, 56, 0.7);
+        }
+
+        /* --- Running Testimonials (Bottom of Hero) --- */
+        .ticker-wrapper {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .ticker-track {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            animation: scrollTicker 30s linear infinite;
+        }
+        .ticker-track:hover { animation-play-state: paused; }
+        
+        @keyframes scrollTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 5px 20px 5px 5px;
+            border-radius: 50px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            min-width: 320px;
+            color: #333;
+        }
+        .ticker-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .ticker-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
+        }
+        .ticker-text strong { color: #333; font-weight: 600; }
+        .ticker-text span { color: #666; font-size: 11px; }
+        .ticker-arrow { color: white; font-size: 20px; font-weight: 300; }
+
+        /* --- Services Section --- */
+        .container { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
+        .grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
+        .card { background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); overflow: hidden; width: 320px; border-bottom: 4px solid #205c54; }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 25px; }
+        .card-content h3 { color: #205c54; margin-bottom: 10px; font-family: 'Playfair Display', serif; font-size: 22px; }
+        
+        /* --- Mega Footer --- */
+        footer { background: #205c54; color: white; padding: 60px 20px 20px 20px; }
+        .footer-grid { display: flex; flex-wrap: wrap; gap: 40px; max-width: 1100px; margin: auto; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 20px; }
+        .footer-col { flex: 1; min-width: 220px; }
+        .footer-col h3 { color: #fde48f; margin-bottom: 20px; font-family: 'Playfair Display', serif; font-size: 22px; }
+        .footer-col p, .footer-col a { color: #d1d5db; text-decoration: none; font-size: 14px; margin-bottom: 10px; display: block; }
+        .footer-col a:hover { color: #fde48f; }
+
+        /* --- LEFT SIDE Chatbot --- */
+        .chat-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; 
+            background: #205c54; 
+            color: #fde48f; 
+            border: 2px solid #fde48f;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+        .chat-toggle:hover { transform: scale(1.1); }
+        
+        .chat-window {
+            position: fixed;
+            bottom: 110px;
+            left: 30px; 
+            width: 320px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            z-index: 9999;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: #fff;
+            color: #000;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+        .chat-header span { cursor: pointer; font-size: 18px; color: #666; }
+        .chat-body {
+            padding: 15px;
+            background: #fafafa;
+            min-height: 120px;
+            font-size: 13px;
+            color: #333;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        .chat-input-area {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            background: #fff;
+        }
+        .chat-input-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            font-size: 13px;
+        }
+        .chat-input-area button {
+            background: transparent;
+            border: none;
+            color: #666;
+            font-size: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .chat-input-area button:hover { color: #205c54; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" style="color: #205c54;">Home</a>
+            <a href="#">About Us <span class="dropdown">▼</span></a>
+            <a href="#">NDIS Services <span class="dropdown">▼</span></a>
+            <a href="#">Plan Management <span class="dropdown">▼</span></a>
+            <a href="#">Testimonials</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Nurturing Potential, Empowering Lives</h1>
+        <p>Your trusted NDIS partner specializing in Early Childhood Early Intervention (ECEI) and personalized care across Australia.</p>
+        
+        <a href="#consultation" class="gold-btn">Book a Free Consultation</a>
+
+        <div class="ticker-wrapper">
+            <div class="ticker-track">
+                <div class="ticker-item">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="ticker-img">
+                    <div class="ticker-text">
+                        <strong>ECEI support was incredible! ❤️</strong>
+                        <span>Parent - Sarah L.</span>
+                    </div>
+                </div>
+                <span class="ticker-arrow">→</span>
+                <div class="ticker-item">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma" class="ticker-img">
+                    <div class="ticker-text">
+                        <strong>A truly life-changing partnership. ❤️</strong>
+                        <span>Parent - Emma R.</span>
+                    </div>
+                </div>
+                <span class="ticker-arrow">→</span>
+                <div class="ticker-item">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David" class="ticker-img">
+                    <div class="ticker-text">
+                        <strong>Amazing Support Coordination. ❤️</strong>
+                        <span>Participant - David T.</span>
+                    </div>
+                </div>
+                <span class="ticker-arrow">→</span>
+                
+                <div class="ticker-item">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="ticker-img">
+                    <div class="ticker-text">
+                        <strong>ECEI support was incredible! ❤️</strong>
+                        <span>Parent - Sarah L.</span>
+                    </div>
+                </div>
+                <span class="ticker-arrow">→</span>
+                <div class="ticker-item">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma" class="ticker-img">
+                    <div class="ticker-text">
+                        <strong>A truly life-changing partnership. ❤️</strong>
+                        <span>Parent - Emma R.</span>
+                    </div>
+                </div>
+                <span class="ticker-arrow">→</span>
+                <div class="ticker-item">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David" class="ticker-img">
+                    <div class="ticker-text">
+                        <strong>Amazing Support Coordination. ❤️</strong>
+                        <span>Participant - David T.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 style="text-align: center; color: #205c54; font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 40px;">Our Core Services</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1560859252-4752b5cb3dbb?auto=format&fit=crop&w=600&q=80" alt="ECEI Service">
+                <div class="card-content">
+                    <h3>Early Childhood (ECEI)</h3>
+                    <p style="font-size: 15px; color: #555;">Designed for children aged 0-6 years. We provide early support to help children achieve their developmental milestones.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="Support Coordination">
+                <div class="card-content">
+                    <h3>Support Coordination</h3>
+                    <p style="font-size: 15px; color: #555;">We help you understand your NDIS plan, connect with community services, and manage your budget effectively.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5fe5?auto=format&fit=crop&w=600&q=80" alt="Daily Tasks">
+                <div class="card-content">
+                    <h3>Daily Activities</h3>
+                    <p style="font-size: 15px; color: #555;">Assistance with daily life tasks such as personal hygiene, meal preparation, and helping participants engage actively.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Care and Care</h3>
+                <p>Empowering lives through compassionate care and expert NDIS services.</p>
+            </div>
+            <div class="footer-col">
+                <h3 style="color: #fff; font-size: 18px;">Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h3 style="color: #fff; font-size: 18px;">Contact Info</h3>
+                <p>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p>
+                <p>Phone: 0491 649 145</p>
+                <p>Email: Info@careandcare.com.au</p>
+            </div>
+        </div>
+        <p style="text-align: center; color: #a9b5b3; font-size: 14px;">&copy; 2026 Care and Care Australia. All Rights Reserved.</p>
+    </footer>
+
+    <button class="chat-toggle" onclick="toggleChat()">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+    </button>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            Care & Care Support
+            <span onclick="toggleChat()">×</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div style="background: white; border: 1px solid #eee; padding: 12px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                Hi there! 👋 I'm your Care & Care virtual assistant. You can ask me about NDIS, ECEI, our services, or how to refer a participant.
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter') sendChat()">
+            <button onclick="sendChat()">➤</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chat = document.getElementById("chatWindow");
+            chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+        }
+
+        const botResponses = {
+            "ndis": "We are a registered NDIS provider. How can we help with your plan?",
+            "ecei": "Our ECEI program helps children aged 0-6 years. Would you like to book a consultation?",
+            "refer": "You can fill out the referral form on our Contact page.",
+            "default": "Please leave your contact number and our team will get back to you shortly!"
+        };
+
+        function sendChat() {
+            const input = document.getElementById("chatInput");
+            const text = input.value.trim();
+            if(!text) return;
+            
+            const chatBody = document.getElementById("chatBody");
+            
+            // Add user message
+            chatBody.innerHTML += `<div style="text-align: right; margin-top: 10px;"><div style="background: #205c54; color: white; padding: 10px 12px; border-radius: 8px; display: inline-block; max-width: 85%; text-align: left;">${text}</div></div>`;
+            input.value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
+            
+            // Add bot reply
+            setTimeout(() => {
+                let reply = botResponses["default"];
+                let textLower = text.toLowerCase();
+                for(let key in botResponses) {
+                    if(textLower.includes(key)) { reply = botResponses[key]; break; }
+                }
+                chatBody.innerHTML += `<div style="margin-top: 10px;"><div style="background: white; border: 1px solid #eee; padding: 12px; border-radius: 8px; display: inline-block; max-width: 85%; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">${reply}</div></div>`;
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 800);
+        }
+    </script>
+</body>
+</html>
