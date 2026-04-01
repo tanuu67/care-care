@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="access-bar">
         <span>Text Size:</span>
         <button onclick="changeTextSize(1)">A+</button>
@@ -25,37 +24,46 @@
     </header>
 
     <div class="container">
-        <h1 style="text-align: center; color: #002b5e; margin-bottom: 40px;">Our NDIS Services</h1>
+        <h1 style="text-align: center; color: #002b5e; margin-bottom: 40px; font-size: 36px;">Our NDIS Services</h1>
         
-        <div class="card">
-            <h3>Early Childhood Early Intervention (ECEI)</h3>
-            <p>Designed for children aged 0-6 years. We provide early support to help children with developmental delays achieve their milestones and build confidence.</p>
-        </div>
-        <div class="card">
-            <h3>Support Coordination</h3>
-            <p>We help you understand your NDIS plan, connect with the right community services, and manage your budget effectively to reach your goals.</p>
-        </div>
-        <div class="card">
-            <h3>Daily Personal Activities</h3>
-            <p>Assistance with daily life tasks such as personal hygiene, meal preparation, and household chores to promote independent living.</p>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1560859252-4752b5cb3dbb?auto=format&fit=crop&w=600&q=80" alt="ECEI Service">
+                <div class="card-content">
+                    <h3>Early Childhood (ECEI)</h3>
+                    <p>Designed for children aged 0-6 years. We provide early support to help children achieve their developmental milestones.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Support Coordination">
+                <div class="card-content">
+                    <h3>Support Coordination</h3>
+                    <p>We help you understand your NDIS plan, connect with community services, and manage your budget effectively.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5fe5?auto=format&fit=crop&w=600&q=80" alt="Daily Tasks">
+                <div class="card-content">
+                    <h3>Daily Personal Activities</h3>
+                    <p>Assistance with daily life tasks such as personal hygiene, meal preparation, and community participation.</p>
+                </div>
+            </div>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
+        <div style="text-align: center; margin-top: 50px;">
             <a href="contact.html" class="btn">Discuss Your Needs With Us</a>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p></footer>
 
-    <a href="https://wa.me/61XXXXXXXXX" class="whatsapp-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
-
-    <button class="chat-toggle-btn" onclick="toggleChat()">💬</button>
-    <div class="chat-window" id="chatWindow">
-        <div class="chat-header">Care & Care Support<span class="close-chat" onclick="toggleChat()">×</span></div>
-        <div class="chat-messages" id="chatMessages"><div class="msg-bubble bot-msg">Hi! How can I help you with our services today?</div></div>
-        <div class="chat-input-area"><input type="text" id="userInput" placeholder="Ask a question..." onkeypress="handleKeyPress(event)"><button onclick="sendMessage()">➤</button></div>
+    <a href="https://wa.me/61XXXXXXXXX" class="wa-btn" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+    
+    <button class="chat-toggle" onclick="toggleChat()">💬</button>
+    <div class="chat-box" id="aiChat">
+        <div class="chat-head">Care & Care Support <span class="chat-close" onclick="toggleChat()">×</span></div>
+        <div class="chat-msgs" id="chatMsgs"><div><div class="msg-bot">Hi! Do you have questions about our ECEI or Support Coordination services?</div></div></div>
+        <div class="chat-input"><input type="text" id="chatVal" placeholder="Ask a question..." onkeypress="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()">➤</button></div>
     </div>
 
     <script src="script.js"></script>
