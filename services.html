@@ -4,94 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Care and Care</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        /* (Same CSS as index.html for consistent look) */
+        :root { --primary: #006666; --gold: #d4af37; --bg-light: #f9fbfd; --text-dark: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
+
+        header { background: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-family: 'Great Vibes', cursive; font-size: 38px; color: var(--primary); text-decoration: none; font-weight: bold; }
+        nav { display: flex; gap: 30px; align-items: center; }
+        .nav-item { position: relative; padding: 10px 0; cursor: pointer; display: flex; align-items: center; }
+        .nav-link { text-decoration: none; color: #333; font-weight: 500; font-size: 16px; transition: 0.3s; }
+        .nav-link.active { color: var(--primary); }
+        .nav-item:hover .nav-link { color: var(--primary); }
+        .drop-arrow { font-size: 10px; color: #666; margin-left: 6px; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); min-width: 220px; border-radius: 8px; flex-direction: column; overflow: hidden; border: 1px solid #eee; padding: 10px 0; }
+        .nav-item:hover .dropdown-menu { display: flex; }
+        .dropdown-menu a { padding: 12px 20px; color: #555; text-decoration: none; border-bottom: 1px solid #f5f5f5; font-size: 14px; transition: 0.3s; }
+        .dropdown-menu a:hover { background: #f9fbfd; color: var(--primary); padding-left: 25px; }
+
+        /* SERVICES HERO */
+        .services-hero { background: var(--primary); color: white; text-align: center; padding: 100px 20px 80px 20px; }
+        .services-hero h1 { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 20px; }
+        .services-hero p { font-size: 18px; max-width: 800px; margin: auto; opacity: 0.9; line-height: 1.6; }
+
+        /* SERVICES CONTENT */
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .service-card { display: flex; flex-wrap: wrap; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 40px; overflow: hidden; align-items: center; border-left: 5px solid var(--primary); }
+        .service-img { flex: 1; min-width: 300px; }
+        .service-img img { width: 100%; height: 100%; object-fit: cover; min-height: 350px; }
+        .service-content { flex: 1.5; padding: 40px; min-width: 300px; }
+        .service-content h2 { font-family: 'Playfair Display', serif; color: var(--primary); font-size: 32px; margin-bottom: 15px; }
+        .service-content p { color: #555; font-size: 16px; line-height: 1.7; margin-bottom: 20px; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 500; }
+
+        /* FOOTER */
+        footer { background: #1a1a1a; color: white; padding: 60px 20px 20px 20px; margin-top: 50px; }
+        .footer-grid { display: flex; flex-wrap: wrap; gap: 40px; max-width: 1200px; margin: auto; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 20px; }
+        .footer-col { flex: 1; min-width: 220px; }
+        .footer-col h3 { color: var(--gold); margin-bottom: 20px; font-size: 20px; }
+        .footer-col p, .footer-col a { color: #aaa; text-decoration: none; font-size: 14px; margin-bottom: 10px; display: block; }
+    </style>
 </head>
 <body>
-    <div class="access-bar">
-        <span>Text Size:</span>
-        <button onclick="changeTextSize(1)">A+</button>
-        <button onclick="changeTextSize(-1)">A-</button>
-        <button onclick="changeTextSize(0)">Reset</button>
-    </div>
 
     <header>
-        <a href="index.html" class="logo">Care and Care</a>
+        <a href="index.html" class="logo">Careandcare</a>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Make a Referral</a>
+            <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+            <div class="nav-item">
+                <span class="nav-link">About Us <span class="drop-arrow">▼</span></span>
+                <div class="dropdown-menu"><a href="#">Our Story</a><a href="#">Our Team</a></div>
+            </div>
+            <div class="nav-item">
+                <span class="nav-link active">NDIS Services <span class="drop-arrow">▼</span></span>
+                <div class="dropdown-menu"><a href="#ecei">Early Childhood (ECEI)</a><a href="#support">Support Coordination</a><a href="#daily">Daily Personal Activities</a></div>
+            </div>
+            <div class="nav-item">
+                <span class="nav-link">Plan Management <span class="drop-arrow">▼</span></span>
+                <div class="dropdown-menu"><a href="#">How it works</a><a href="#">Pricing</a></div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-link">Testimonials</a></div>
+            <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
         </nav>
     </header>
 
+    <div class="services-hero">
+        <h1>Let us guide you through the NDIS.</h1>
+        <p>Choosing a partner who truly understands what matters most to you is important. Let us guide you through the NDIS journey to achieve your goals together.</p>
+    </div>
+
     <div class="container">
-        <h1 class="section-title">Our NDIS & Child Care Services</h1>
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1560859252-4752b5cb3dbb?auto=format&fit=crop&w=600&q=80" alt="ECEI Service">
-                <div class="card-content">
-                    <h3>Early Childhood (ECEI)</h3>
-                    <p>Designed for children aged 0-6 years. We provide early support to help children achieve their developmental milestones in a fun and caring environment.</p>
-                </div>
+        <div class="service-card" id="ecei">
+            <div class="service-content">
+                <h2>Early Childhood Early Intervention (ECEI)</h2>
+                <p>The early years are critical. Our specialized ECEI team works closely with children aged 0-6 years who have developmental delays or disabilities. We focus on building your child's capacity and confidence through tailored, play-based strategies.</p>
+                <a href="contact.html" class="btn">Enquire Now</a>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="Support Coordination">
-                <div class="card-content">
-                    <h3>Support Coordination</h3>
-                    <p>We help you understand your NDIS plan, connect with community services, and manage your budget effectively for your family's needs.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5fe5?auto=format&fit=crop&w=600&q=80" alt="Daily Tasks">
-                <div class="card-content">
-                    <h3>Daily Personal Activities</h3>
-                    <p>Assistance with daily life tasks such as personal hygiene, meal preparation, and helping participants engage actively in the community.</p>
-                </div>
-            </div>
+            <div class="service-img"><img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=800&q=80" alt="ECEI"></div>
         </div>
 
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="contact.html" class="btn">Discuss Your Needs With Us</a>
+        <div class="service-card" id="support">
+            <div class="service-img" style="order: -1;"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Support Coordination"></div>
+            <div class="service-content">
+                <h2>Support Coordination</h2>
+                <p>Navigating the NDIS can be overwhelming. Our experienced Support Coordinators are here to take the stress away. We help you understand your plan, connect with the right providers, and maximize your funded supports.</p>
+                <a href="contact.html" class="btn">Enquire Now</a>
+            </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-grid">
-            <div class="footer-col">
-                <h2 style="color: var(--primary-color); margin-bottom: 15px; font-family: 'Poppins', sans-serif;">Care and Care</h2>
-                <p>For updated news & events, subscribe to our newsletter today!</p>
-                <div class="newsletter">
-                    <input type="email" placeholder="Your email address">
-                    <button>Subscribe</button>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <a href="index.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html">Make a Referral</a>
-            </div>
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <p><strong>Address:</strong><br>Greenwood Business Park,<br>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p>
-                <p><strong>Tel:</strong> <a href="tel:0491649145" style="display:inline; color:var(--secondary-color);">0491 649 145</a></p>
-                <p><strong>Email:</strong> <a href="mailto:Info@careandcare.com.au" style="display:inline; color:var(--secondary-color);">Info@careandcare.com.au</a></p>
-            </div>
-            <div class="footer-col">
-                <h3>Operating Hours</h3>
-                <p><strong>Monday to Friday:</strong><br>9am - 5pm AEST</p>
-            </div>
+            <div class="footer-col"><h2 style="font-family:'Great Vibes', cursive; font-size:32px;">Careandcare</h2><p>Working together on a long journey to fulfill the goals.</p></div>
+            <div class="footer-col"><h3>Quick Links</h3><a href="index.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
+            <div class="footer-col"><h3>Contact Us</h3><p>Greenwood Business Park,<br>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p><p>Tel: 0491 649 145</p></div>
         </div>
-        <div class="copyright"><p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p></div>
+        <p style="text-align: center; color: #666; font-size: 13px;">© 2026 by Care & Care. Designed by PAGEFOURDESIGN</p>
     </footer>
 
-    <a href="https://wa.me/61491649145" class="wa-btn" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
-    <button class="chat-toggle" onclick="toggleChat()">💬</button>
-    <div class="chat-box" id="aiChat">
-        <div class="chat-head">Care & Care Support <span class="chat-close" onclick="toggleChat()">×</span></div>
-        <div class="chat-msgs" id="chatMsgs"><div><div class="msg-bot">Hi! Do you have questions about our ECEI services?</div></div></div>
-        <div class="chat-input"><input type="text" id="chatVal" placeholder="Ask a question..." onkeypress="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()">➤</button></div>
-    </div>
-    <script src="script.js"></script>
 </body>
 </html>
