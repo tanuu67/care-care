@@ -24,28 +24,27 @@
     </header>
 
     <div class="container">
-        <h1 style="text-align: center; color: #002b5e; margin-bottom: 40px; font-size: 36px;">Our NDIS Services</h1>
-        
+        <h1 class="section-title">Our NDIS & Child Care Services</h1>
         <div class="grid">
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1560859252-4752b5cb3dbb?auto=format&fit=crop&w=600&q=80" alt="ECEI Service">
                 <div class="card-content">
                     <h3>Early Childhood (ECEI)</h3>
-                    <p>Designed for children aged 0-6 years. We provide early support to help children achieve their developmental milestones.</p>
+                    <p>Designed for children aged 0-6 years. We provide early support to help children achieve their developmental milestones in a fun and caring environment.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Support Coordination">
+                <img src="https://images.unsplash.com/photo-1543269664-56d5d51436fd?auto=format&fit=crop&w=600&q=80" alt="Support Coordination">
                 <div class="card-content">
                     <h3>Support Coordination</h3>
-                    <p>We help you understand your NDIS plan, connect with community services, and manage your budget effectively.</p>
+                    <p>We help you understand your NDIS plan, connect with community services, and manage your budget effectively for your family's needs.</p>
                 </div>
             </div>
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5fe5?auto=format&fit=crop&w=600&q=80" alt="Daily Tasks">
                 <div class="card-content">
                     <h3>Daily Personal Activities</h3>
-                    <p>Assistance with daily life tasks such as personal hygiene, meal preparation, and community participation.</p>
+                    <p>Assistance with daily life tasks such as personal hygiene, meal preparation, and helping participants engage actively in the community.</p>
                 </div>
             </div>
         </div>
@@ -55,17 +54,44 @@
         </div>
     </div>
 
-    <footer><p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p></footer>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h2 style="color: var(--primary-color); margin-bottom: 15px; font-family: 'Poppins', sans-serif;">Care and Care</h2>
+                <p>For updated news & events, subscribe to our newsletter today!</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="index.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html">Make a Referral</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><strong>Address:</strong><br>Greenwood Business Park,<br>301 Burwood Hwy, LG, Building 1,<br>Burwood VIC 3125</p>
+                <p><strong>Tel:</strong> <a href="tel:0491649145" style="display:inline; color:var(--secondary-color);">0491 649 145</a></p>
+                <p><strong>Email:</strong> <a href="mailto:Info@careandcare.com.au" style="display:inline; color:var(--secondary-color);">Info@careandcare.com.au</a></p>
+            </div>
+            <div class="footer-col">
+                <h3>Operating Hours</h3>
+                <p><strong>Monday to Friday:</strong><br>9am - 5pm AEST</p>
+            </div>
+        </div>
+        <div class="copyright"><p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p></div>
+    </footer>
 
-    <a href="https://wa.me/61XXXXXXXXX" class="wa-btn" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
-    
+    <a href="https://wa.me/61491649145" class="wa-btn" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
     <button class="chat-toggle" onclick="toggleChat()">💬</button>
     <div class="chat-box" id="aiChat">
         <div class="chat-head">Care & Care Support <span class="chat-close" onclick="toggleChat()">×</span></div>
-        <div class="chat-msgs" id="chatMsgs"><div><div class="msg-bot">Hi! Do you have questions about our ECEI or Support Coordination services?</div></div></div>
+        <div class="chat-msgs" id="chatMsgs"><div><div class="msg-bot">Hi! Do you have questions about our ECEI services?</div></div></div>
         <div class="chat-input"><input type="text" id="chatVal" placeholder="Ask a question..." onkeypress="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()">➤</button></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
