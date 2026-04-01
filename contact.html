@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Referral | Care and Care</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="access-bar">
+        <span>Text Size:</span>
+        <button onclick="changeTextSize(1)">A+</button>
+        <button onclick="changeTextSize(-1)">A-</button>
+        <button onclick="changeTextSize(0)">Reset</button>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo">Care and Care</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Make a Referral</a>
+        </nav>
+    </header>
+
+    <div class="container" style="max-width: 650px;">
+        <h1 style="text-align: center; color: #002b5e; margin-bottom: 10px;">Make a Referral</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Please fill out the form below. Our team will get back to you within 24 hours.</p>
+
+        <form action="#" method="POST">
+            <label><strong>Full Name</strong></label>
+            <input type="text" name="name" placeholder="Enter full name" required>
+
+            <label><strong>Email Address</strong></label>
+            <input type="email" name="email" placeholder="Enter email address" required>
+
+            <label><strong>Phone Number</strong></label>
+            <input type="tel" name="phone" placeholder="Enter contact number" required>
+
+            <label><strong>Service Interested In</strong></label>
+            <select name="service">
+                <option value="ecei">Early Childhood Early Intervention (ECEI)</option>
+                <option value="support-coordination">Support Coordination</option>
+                <option value="daily-activities">Daily Personal Activities</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label><strong>Message / Additional Details</strong></label>
+            <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
+
+            <button type="submit" class="btn" style="width: 100%; font-size: 18px;">Submit Referral</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/61XXXXXXXXX" class="whatsapp-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+
+    <button class="chat-toggle-btn" onclick="toggleChat()">💬</button>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">Care & Care Support<span class="close-chat" onclick="toggleChat()">×</span></div>
+        <div class="chat-messages" id="chatMessages"><div class="msg-bubble bot-msg">Hello! Need help filling out the referral form?</div></div>
+        <div class="chat-input-area"><input type="text" id="userInput" placeholder="Ask a question..." onkeypress="handleKeyPress(event)"><button onclick="sendMessage()">➤</button></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

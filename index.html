@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care and Care | Premium NDIS Provider Australia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="access-bar">
+        <span>Text Size:</span>
+        <button onclick="changeTextSize(1)">A+</button>
+        <button onclick="changeTextSize(-1)">A-</button>
+        <button onclick="changeTextSize(0)">Reset</button>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo">Care and Care</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Make a Referral</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Your Trusted NDIS & ECEI Partner</h1>
+        <p>Empowering individuals with disabilities to live life to the fullest. We provide personalized, premium support across Australia.</p>
+        <a href="contact.html" class="btn">Book a Free Consultation</a>
+    </section>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 30px; color: #002b5e;">Why Choose Us?</h2>
+        <div class="card">
+            <h3>Registered & Compliant</h3>
+            <p>We strictly adhere to the NDIS Quality and Safeguards Commission guidelines, ensuring the highest standard of care and safety for you and your loved ones.</p>
+        </div>
+        <div class="card">
+            <h3>Experienced Professionals</h3>
+            <p>Our team consists of qualified support coordinators, therapists, and caregivers who are passionate about making a real difference.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Care and Care Australia. All Rights Reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/61XXXXXXXXX?text=Hi! I am looking for NDIS support." class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <button class="chat-toggle-btn" onclick="toggleChat()">💬</button>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            Care & Care Support
+            <span class="close-chat" onclick="toggleChat()">×</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="msg-bubble bot-msg">Hi there! 👋 I'm your Care & Care virtual assistant. You can ask me about NDIS, ECEI, our services, or how to refer a participant.</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Type your question..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
